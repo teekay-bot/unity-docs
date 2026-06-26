@@ -1,0 +1,167 @@
+/* ============================================================
+   Unity 6.3 Docs — custom theme
+   Combos: Carbon #171717 · Lime #C6FF34 · Onyx #020202 · Candy Blue #B2D5E5
+   Tất cả custom style nằm ở file này (không fork theme).
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --u-carbon: #171717;
+  --u-onyx: #020202;
+  --u-lime: #c6ff34;
+  --u-candy: #b2d5e5;
+  --u-radius: 12px;
+}
+
+/* ---------- LIGHT (scheme: default) ---------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #171717; /* carbon header */
+  --md-primary-fg-color--light: #2a2a2a;
+  --md-primary-fg-color--dark: #020202;
+  --md-primary-bg-color: #fafafa; /* header text/icons */
+  --md-accent-fg-color: #2b7a9b; /* readable candy-derived blue */
+  --md-default-bg-color: #fafafa;
+  --md-default-fg-color: #171717;
+  --md-typeset-a-color: #2b7a9b;
+}
+
+/* ---------- DARK (scheme: slate) — chủ đạo ---------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #171717; /* carbon header */
+  --md-primary-fg-color--light: #222222;
+  --md-primary-fg-color--dark: #020202;
+  --md-primary-bg-color: #f2f2f2;
+  --md-accent-fg-color: #c6ff34; /* lime */
+  --md-default-bg-color: #0d0d0d; /* near-onyx page */
+  --md-default-fg-color: rgba(255, 255, 255, 0.88);
+  --md-typeset-a-color: #c6ff34; /* lime links */
+  --md-code-bg-color: #171717;
+  --md-footer-bg-color: #020202;
+}
+
+/* ---------- Typography ---------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-header__title,
+.md-tabs__link {
+  font-family: "Space Grotesk", "Inter", -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+.md-typeset h1 {
+  font-weight: 700;
+}
+.md-typeset h2 {
+  font-weight: 600;
+}
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Header / Top nav (premium) ---------- */
+.md-header {
+  border-bottom: 1px solid rgba(198, 255, 52, 0.14);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+.md-tabs {
+  border-bottom: none;
+}
+.md-tabs__link {
+  position: relative;
+  opacity: 0.78;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  color: var(--u-lime);
+}
+.md-tabs__link--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--u-lime);
+  border-radius: 2px;
+}
+
+/* search box bo tròn */
+.md-search__form {
+  border-radius: 999px;
+}
+
+/* ---------- Links ---------- */
+.md-typeset a {
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Code blocks ---------- */
+.md-typeset pre > code {
+  border-radius: var(--u-radius);
+}
+.md-typeset .highlight {
+  border-radius: var(--u-radius);
+}
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid rgba(198, 255, 52, 0.12);
+}
+
+/* ---------- Buttons / CTA ---------- */
+.md-typeset .md-button {
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+.md-typeset .md-button--primary {
+  background: var(--u-lime);
+  color: #171717;
+  border-color: var(--u-lime);
+}
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+}
+
+/* ---------- Tables ---------- */
+.md-typeset table:not([class]) th {
+  background: rgba(178, 213, 229, 0.18);
+  font-weight: 600;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: rgba(198, 255, 52, 0.08);
+}
+
+/* ---------- Grid cards (packages, overviews) ---------- */
+.md-typeset .grid.cards > :is(ul, ol) > li {
+  border-radius: var(--u-radius);
+  transition: transform 0.15s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  transform: translateY(-3px);
+  border-color: var(--u-lime);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Active TOC / nav ---------- */
+.md-nav__link--active {
+  color: var(--u-lime);
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .md-tabs__link,
+  .md-typeset a,
+  .md-typeset .md-button,
+  .md-typeset .grid.cards > :is(ul, ol) > li {
+    transition: none !important;
+  }
+}

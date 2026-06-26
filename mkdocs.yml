@@ -7,6 +7,9 @@ repo_name: teekay-bot/unity-docs
 theme:
   name: material
   language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.sections
@@ -19,20 +22,16 @@ theme:
     - content.code.copy
     - content.code.annotate
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
+    # Dark-first (chủ đạo): Carbon/Onyx + Lime accent
+    - scheme: slate
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Chuyển sang light mode
+    # Light: nền sáng + Candy Blue accent
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Chuyển sang dark mode
 
 markdown_extensions:
   - admonition
@@ -58,9 +57,13 @@ markdown_extensions:
 plugins:
   - search
 
+extra_css:
+  - stylesheets/extra.css
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Packages & Assets: packages/index.md
   - Setup (Quick Start):
       - Overview: setup/index.md
       - New 2D Project: setup/new-2d-project.md
