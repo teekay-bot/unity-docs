@@ -1,0 +1,99 @@
+site_name: Unity 6.3 Docs
+site_description: Personal Unity 6.3 LTS settings & optimization reference (2D/3D, Mobile/PC)
+site_url: https://teekay-bot.github.io/unity-docs/
+repo_url: https://github.com/teekay-bot/unity-docs
+repo_name: teekay-bot/unity-docs
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Setup (Quick Start):
+      - Overview: setup/index.md
+      - New 2D Project: setup/new-2d-project.md
+      - New 3D Project: setup/new-3d-project.md
+  - Project Settings:
+      - Overview: project-settings/index.md
+      - Quality: project-settings/quality.md
+      - Player: project-settings/player.md
+      - Graphics & Render Pipeline: project-settings/graphics-render-pipeline.md
+      - Physics: project-settings/physics.md
+      - Time: project-settings/time.md
+  - Rendering:
+      - Overview: rendering/index.md
+      - Render Pipeline (URP): rendering/render-pipeline-urp.md
+      - Draw Calls & Batching: rendering/draw-calls-batching.md
+      - Lighting: rendering/lighting.md
+      - Post-processing: rendering/post-processing.md
+  - Assets:
+      - Overview: assets/index.md
+      - Textures: assets/textures.md
+      - Audio: assets/audio.md
+      - Sprites & Atlases: assets/sprites-atlases.md
+      - Meshes & Models: assets/meshes-models.md
+  - Scripting:
+      - Overview: scripting/index.md
+      - Update Loops: scripting/update-loops.md
+      - Caching & GC: scripting/caching-gc.md
+      - Object Pooling: scripting/object-pooling.md
+  - Build:
+      - Overview: build/index.md
+      - PC Build: build/pc-build.md
+      - Mobile Build: build/mobile-build.md
+  - Profiling:
+      - Overview: profiling/index.md
+      - Tools: profiling/tools.md
+  - Snippets: snippets/index.md
