@@ -9,28 +9,32 @@
 !!! info "Mới ở Unity 6.3"
     Bạn có thể **đổi nhanh Quality level ngay trên Editor toolbar**, không cần mở Project Settings. (Nguồn: [What's New in Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
 
-## ⚠️ Đọc trước: URP "nuốt" phần lớn setting rendering
+!!! note "Project này dùng URP — không dùng Built-in"
+    Toàn bộ docs giả định **URP (Universal Render Pipeline)**, hiện tại lẫn tương lai. Mọi hướng dẫn bỏ qua Built-in Render Pipeline.
 
-Trong Unity 6.3, nếu project dùng **URP** (khuyến nghị mặc định cho project mới — xem [Render Pipeline (URP)](../rendering/render-pipeline-urp.md)), thì **mỗi Quality level trỏ tới một URP Render Pipeline Asset** qua field **Render Pipeline**. Khi đó, nhiều setting rendering KHÔNG còn nằm trong cửa sổ Quality nữa mà do **URP Asset** điều khiển.
+## ⚠️ Đọc trước: với URP, phần lớn setting rendering nằm ở URP Asset
 
-Manual 6.3 ghi rõ các property sau **chỉ khả dụng khi project dùng Built-In Render Pipeline** (với URP → chỉnh trong URP Asset):
+Trong Unity 6.3 với **URP**, **mỗi Quality level trỏ tới một URP Render Pipeline Asset** qua field **Render Pipeline**. Vì vậy phần lớn setting rendering KHÔNG nằm trong cửa sổ Quality mà do **URP Asset** (và URP Renderer / Camera) điều khiển — xem [Render Pipeline (URP)](../rendering/render-pipeline-urp.md).
 
-- **Soft Particles**
-- **Shadows, Shadow Resolution, Shadow Projection, Shadow Distance, Shadow Cascades** (nhóm Shadows)
-- **LOD Cross Fade**
+Các property sau Unity đánh dấu "Built-in only" → **với project URP của chúng ta, cấu hình chúng trong URP Asset, không phải cửa sổ Quality:**
 
-> Nguồn: [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html). Anti-aliasing và render scale với URP cũng thuộc URP Asset — xem trang URP.
+- **Anti Aliasing (MSAA)** → URP Asset › *Quality* (+ MSAA per-Camera)
+- **Soft Particles** → URP Asset
+- **Shadows, Shadow Resolution, Shadow Distance, Cascades** → URP Asset › *Shadows*
+- **LOD Cross Fade** → URP Asset
+
+> Nguồn: [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html); [URP Asset reference](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest).
 
 !!! warning "Cần verify"
-    Danh sách "settings nào bị URP Asset override hoàn toàn khi assign Render Pipeline" chưa được manual liệt kê đầy đủ — manual chỉ nói "refer to URP asset reference". Khi viết các trang URP, cần đối chiếu trực tiếp [URP Asset reference](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest) để xác nhận từng field.
+    Vị trí/tên field chính xác trong **URP Asset 6.3** (URP 17.x) cho từng setting trên cần đối chiếu trực tiếp [URP Asset reference](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest) khi viết trang URP. Trang này chỉ liệt kê những gì còn thực sự nằm trong cửa sổ Quality.
 
 ## Các setting (theo nhóm, manual 6.3)
 
 | Nhóm | Setting | Options / Default (verify ở 6.3) |
 |---|---|---|
-| **Rendering** | Render Pipeline | URP Asset cho quality level đó (để trống = Built-In) |
-| | Pixel Light Count | Số per-pixel light tối đa (chỉ Built-In, forward) |
-| | Anti Aliasing | Disabled / 2x / 4x / 8x MSAA *(Built-In; URP → trong URP Asset)* |
+| **Rendering** | Render Pipeline | URP Asset cho quality level đó (project luôn gán URP Asset) |
+| | Pixel Light Count | *(Built-in)* — với URP, lighting do URP Asset/Renderer quản → **URP Asset** |
+| | Anti Aliasing (MSAA) | *(Built-in)* → **URP Asset** (+ MSAA per-Camera) |
 | | Realtime Reflection Probes | On/Off |
 | | Resolution Scaling Fixed DPI Factor | Hệ số scale resolution (mobile) |
 | | VSync Count | Don't Sync / Every V Blank / Every Second V Blank |
@@ -39,15 +43,14 @@ Manual 6.3 ghi rõ các property sau **chỉ khả dụng khi project dùng Buil
 | | Mipmap Limit Groups | Custom group: offset hoặc override |
 | | Anisotropic Textures | Disabled / Per Texture / Forced On |
 | | Mipmap Streaming | Memory Budget **512 MB**, Renderers Per Frame **512**, Max Level Reduction **2**, Max IO Requests **1024** |
-| **Particles** | Soft Particles | On/Off *(Built-In only)* |
+| **Particles** | Soft Particles | *(Built-in)* → **URP Asset** |
 | | Particle Raycast Budget | Số raycast tối đa cho particle collision |
-| **Shadows** *(Built-In only)* | Shadowmask Mode | Shadowmask / Distance Shadowmask |
-| | Shadows | Disable / Hard Only / Hard and Soft |
-| | Shadow Resolution / Projection / Distance / Cascades | Close Fit/Stable Fit; Two/Four Cascades; Distance theo mét |
+| **Shadows** | Shadows / Resolution / Distance / Cascades | *(Built-in)* → **URP Asset › Shadows** |
 | **Async Asset Upload** | Time Slice / Buffer Size / Persistent Buffer | ms/frame; MB; giữ buffer khi queue rỗng |
 | **Level of Detail** | LOD Bias | <1 ưu tiên LOD thấp sớm; >1 giữ LOD cao lâu hơn |
 | | Maximum LOD Level | LOD thấp nhất project dùng |
-| | Mesh LOD Threshold / LOD Cross Fade | *(LOD Cross Fade: Built-In only)* |
+| | Mesh LOD Threshold | Ảnh hưởng đánh giá chọn LOD |
+| | LOD Cross Fade | *(Built-in)* → **URP Asset** |
 | **Meshes** | Skin Weights | Số bone ảnh hưởng 1 vertex khi animation |
 
 !!! warning "Cần verify"
@@ -88,7 +91,7 @@ Manual 6.3 ghi rõ các property sau **chỉ khả dụng khi project dùng Buil
     **Why tổng quát (Mobile):** GPU tile-based, bị giới hạn bởi **bandwidth, fillrate, thermal throttling và pin**. Mọi thứ tốn bandwidth (MSAA, aniso, soft shadow, overdraw) đều phải cân nhắc. Kiểm soát fps bằng `targetFrameRate` thay vì dựa VSync.
 
 !!! warning "Cần verify"
-    Các con số recommend ở trên là **hướng tối ưu chung**, chưa phải giá trị "default của 6.3". Trước khi coi là chuẩn: (1) mở `Edit > Project Settings > Quality` trong Unity 6.3 để đọc default thực tế, (2) nếu dùng URP, mở **URP Asset** tương ứng của từng quality level để chỉnh AA/Shadows/Render Scale.
+    Các con số recommend ở trên là **hướng tối ưu chung**, chưa phải giá trị "default của 6.3". Trước khi coi là chuẩn: (1) mở `Edit > Project Settings > Quality` trong Unity 6.3 để đọc default thực tế, (2) mở **URP Asset** tương ứng của từng quality level để chỉnh AA / Shadows / Render Scale.
 
 ## Code: set runtime theo platform
 
