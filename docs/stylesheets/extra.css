@@ -73,18 +73,22 @@
 .md-tabs__link {
   position: relative;
   padding: 0.28em 0.85em;
+  margin-inline: 0;
   border-radius: 999px;
   border: 1px solid transparent;
   opacity: 0.85;
+  transform-origin: center;
   transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease,
-    transform 0.18s ease, box-shadow 0.18s ease;
+    transform 0.18s ease, box-shadow 0.18s ease, margin-inline 0.18s ease;
 }
 .md-tabs__link:hover {
   opacity: 1;
   color: var(--u-lime);
   background: rgba(198, 255, 52, 0.12);
   border-color: rgba(198, 255, 52, 0.3);
-  transform: translateY(-1px);
+  transform: scale(1.13);
+  margin-inline: 0.45em;
+  z-index: 2;
 }
 .md-tabs__link--active {
   opacity: 1;
@@ -169,6 +173,10 @@
   .md-typeset .md-button,
   .md-typeset .grid.cards > :is(ul, ol) > li {
     transition: none !important;
+  }
+  .md-tabs__link:hover {
+    transform: none !important;
+    margin-inline: 0 !important;
   }
 }
 
