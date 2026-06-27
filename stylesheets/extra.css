@@ -1,0 +1,623 @@
+/* ============================================================
+   Unity 6.3 Docs — custom theme
+   Combos: Carbon #171717 · Lime #C6FF34 · Onyx #020202 · Candy Blue #B2D5E5
+   Tất cả custom style nằm ở file này (không fork theme).
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --u-carbon: #171717;
+  --u-onyx: #020202;
+  --u-lime: #c6ff34;
+  --u-candy: #b2d5e5;
+  --u-radius: 12px;
+}
+
+/* ---------- LIGHT (scheme: default) ---------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #171717; /* carbon header */
+  --md-primary-fg-color--light: #2a2a2a;
+  --md-primary-fg-color--dark: #020202;
+  --md-primary-bg-color: #fafafa; /* header text/icons */
+  --md-accent-fg-color: #2b7a9b; /* readable candy-derived blue */
+  --md-default-bg-color: #fafafa;
+  --md-default-fg-color: #171717;
+  --md-typeset-a-color: #2b7a9b;
+}
+
+/* ---------- DARK (scheme: slate) — chủ đạo ---------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #171717; /* carbon header */
+  --md-primary-fg-color--light: #222222;
+  --md-primary-fg-color--dark: #020202;
+  --md-primary-bg-color: #f2f2f2;
+  --md-accent-fg-color: #c6ff34; /* lime */
+  --md-default-bg-color: #0d0d0d; /* near-onyx page */
+  --md-default-fg-color: rgba(255, 255, 255, 0.88);
+  --md-typeset-a-color: #c6ff34; /* lime links */
+  --md-code-bg-color: #171717;
+  --md-footer-bg-color: #020202;
+}
+
+/* ---------- Typography ---------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-header__title,
+.md-tabs__link {
+  font-family: "Space Grotesk", "Inter", -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+.md-typeset h1 {
+  font-weight: 700;
+}
+.md-typeset h2 {
+  font-weight: 600;
+}
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Header / Top nav (premium) ---------- */
+.md-header {
+  border-bottom: 1px solid rgba(198, 255, 52, 0.14);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+.md-tabs {
+  border-bottom: none;
+}
+/* Top nav = pill (giống tag pill) + juice */
+.md-tabs__link {
+  position: relative;
+  padding: 0.28em 0.85em;
+  margin-inline: 0;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  opacity: 0.85;
+  transform-origin: center;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease, box-shadow 0.18s ease, margin-inline 0.18s ease;
+}
+.md-tabs__link:hover {
+  opacity: 1;
+  color: var(--u-lime);
+  background: rgba(198, 255, 52, 0.12);
+  border-color: rgba(198, 255, 52, 0.3);
+  transform: scale(1.13);
+  z-index: 2;
+}
+/* hàng xóm 2 bên được JS đẩy ra qua translateX trên .md-tabs__link;
+   transition transform đã khai báo ở rule .md-tabs__link gốc phía trên */
+.md-tabs__link--active {
+  opacity: 1;
+  color: var(--u-lime);
+  font-weight: 600;
+  background: rgba(198, 255, 52, 0.16);
+  border-color: rgba(198, 255, 52, 0.45);
+  box-shadow: 0 0 0 1px rgba(198, 255, 52, 0.25),
+    0 2px 14px rgba(198, 255, 52, 0.18);
+}
+
+/* search box bo tròn */
+.md-search__form {
+  border-radius: 999px;
+}
+
+/* ---------- Links ---------- */
+.md-typeset a {
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Code blocks ---------- */
+.md-typeset pre > code {
+  border-radius: var(--u-radius);
+}
+.md-typeset .highlight {
+  border-radius: var(--u-radius);
+}
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid rgba(198, 255, 52, 0.12);
+}
+
+/* ---------- Buttons / CTA ---------- */
+.md-typeset .md-button {
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+.md-typeset .md-button--primary {
+  background: var(--u-lime);
+  color: #171717;
+  border-color: var(--u-lime);
+}
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+}
+
+/* ---------- Tables ---------- */
+.md-typeset table:not([class]) th {
+  background: rgba(178, 213, 229, 0.18);
+  font-weight: 600;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: rgba(198, 255, 52, 0.08);
+}
+
+/* ---------- Grid cards (packages, overviews) ---------- */
+.md-typeset .grid.cards > :is(ul, ol) > li {
+  border-radius: var(--u-radius);
+  transition: transform 0.15s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  transform: translateY(-3px);
+  border-color: var(--u-lime);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Active TOC / nav ---------- */
+.md-nav__link--active {
+  color: var(--u-lime);
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .md-tabs__link,
+  .md-typeset a,
+  .md-typeset .md-button,
+  .md-typeset .grid.cards > :is(ul, ol) > li {
+    transition: none !important;
+  }
+  .md-tabs__link:hover {
+    transform: none !important;
+    margin-inline: 0 !important;
+  }
+}
+
+/* ============================================================
+   Layout — tận dụng bề ngang màn hình (rộng hơn default ~61rem)
+   ============================================================ */
+.md-grid {
+  max-width: 76rem;
+}
+
+/* ============================================================
+   Typography hierarchy — tách bạch title / header / content
+   ============================================================ */
+.md-typeset {
+  line-height: 1.72;
+  font-size: 0.85rem;
+}
+.md-typeset p {
+  margin: 0.85em 0;
+}
+
+.md-typeset h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 1.1rem;
+}
+
+/* h2 = mốc section: band nền mờ + thanh accent lime trái → stand-out */
+.md-typeset h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 2.6em 0 1em;
+  padding: 0.32em 0.8rem;
+  border-left: 4px solid var(--u-lime);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(
+    90deg,
+    rgba(198, 255, 52, 0.1),
+    rgba(198, 255, 52, 0) 65%
+  );
+}
+[data-md-color-scheme="default"] .md-typeset h2 {
+  background: linear-gradient(
+    90deg,
+    rgba(43, 122, 155, 0.12),
+    rgba(43, 122, 155, 0) 65%
+  );
+}
+
+/* h3 = sub-section: chữ tông accent, không thanh */
+.md-typeset h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 2em 0 0.6em;
+}
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #d7ff7a;
+}
+[data-md-color-scheme="default"] .md-typeset h3 {
+  color: #2b7a9b;
+}
+
+.md-typeset h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5em 0 0.5em;
+}
+
+.md-typeset hr {
+  margin: 2.4em 0;
+}
+
+/* Blockquote intro/ghi chú = boxed nhẹ, đỡ khô */
+.md-typeset blockquote {
+  border-left: 4px solid var(--u-lime);
+  background: rgba(198, 255, 52, 0.05);
+  border-radius: 0 8px 8px 0;
+  padding: 0.5em 1em;
+}
+[data-md-color-scheme="default"] .md-typeset blockquote {
+  border-left-color: #2b7a9b;
+  background: rgba(43, 122, 155, 0.06);
+}
+
+/* ============================================================
+   Tags (mobile/pc/2d/3d) — pill nhỏ, dễ quét
+   ============================================================ */
+.md-typeset .md-tag {
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 0.18em 0.7em;
+  background: rgba(198, 255, 52, 0.12);
+  border: 1px solid rgba(198, 255, 52, 0.3);
+}
+[data-md-color-scheme="default"] .md-typeset .md-tag {
+  background: rgba(43, 122, 155, 0.1);
+  border-color: rgba(43, 122, 155, 0.3);
+}
+
+/* ============================================================
+   Mermaid diagrams — canh giữa, nền nhẹ
+   ============================================================ */
+.md-typeset .mermaid {
+  text-align: center;
+  margin: 1.4em 0;
+}
+
+/* ============================================================
+   Tables — bo góc, header nổi, zebra, hover row
+   ============================================================ */
+.md-typeset table:not([class]) {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.78rem;
+}
+.md-typeset table:not([class]) th {
+  font-weight: 700;
+}
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.62em 0.9em;
+  border: none;
+}
+.md-typeset table:not([class]) td:first-child {
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tbody tr {
+  transition: background 0.15s ease;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: rgba(198, 255, 52, 0.1);
+  border-bottom: 2px solid rgba(198, 255, 52, 0.3);
+}
+[data-md-color-scheme="slate"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.022);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(198, 255, 52, 0.07);
+}
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: rgba(43, 122, 155, 0.12);
+  border-bottom: 2px solid rgba(43, 122, 155, 0.3);
+}
+[data-md-color-scheme="default"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.025);
+}
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(43, 122, 155, 0.08);
+}
+
+/* ============================================================
+   Lists — marker tông accent, spacing thoáng
+   ============================================================ */
+.md-typeset ul li::marker {
+  color: var(--u-lime);
+}
+.md-typeset ol li::marker {
+  color: var(--u-lime);
+  font-weight: 700;
+}
+[data-md-color-scheme="default"] .md-typeset ul li::marker,
+[data-md-color-scheme="default"] .md-typeset ol li::marker {
+  color: #2b7a9b;
+}
+.md-typeset li {
+  margin-bottom: 0.35em;
+}
+
+/* ============================================================
+   Nav trái + TOC phải — "you are here" rõ, sửa active về lime
+   ============================================================ */
+.md-nav__title {
+  font-weight: 700;
+}
+/* TOC phải: thanh accent trái + bold khi active */
+.md-nav--secondary .md-nav__link {
+  border-left: 2px solid transparent;
+  padding-left: 0.6rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.md-nav--secondary .md-nav__link--active {
+  font-weight: 600;
+  border-left-color: var(--u-lime);
+}
+.md-nav--primary .md-nav__item--active > .md-nav__link,
+.md-nav--primary .md-nav__link--active {
+  font-weight: 600;
+}
+/* màu active theo scheme (sửa lỗi nav trái hiện xanh ở dark) */
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: var(--u-lime);
+}
+[data-md-color-scheme="default"] .md-nav__link--active,
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link,
+[data-md-color-scheme="default"] .md-nav__link:hover {
+  color: #2b7a9b;
+}
+[data-md-color-scheme="default"] .md-nav--secondary .md-nav__link--active {
+  border-left-color: #2b7a9b;
+}
+
+/* ============================================================
+   Nav trái — mỗi mục thành "pill" nổi bật + juice nhẹ
+   ============================================================ */
+.md-nav--primary .md-nav__item {
+  margin: 0.12rem 0;
+}
+.md-nav--primary .md-nav__link {
+  border-radius: 8px;
+  padding: 0.4em 0.65em;
+  transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+.md-nav--primary .md-nav__link:hover {
+  transform: translateX(3px);
+}
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover {
+  background: rgba(198, 255, 52, 0.1);
+}
+[data-md-color-scheme="slate"]
+  .md-nav--primary
+  .md-nav__item--active
+  > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link--active {
+  background: rgba(198, 255, 52, 0.14);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--u-lime);
+}
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__link:hover {
+  background: rgba(43, 122, 155, 0.1);
+}
+[data-md-color-scheme="default"]
+  .md-nav--primary
+  .md-nav__item--active
+  > .md-nav__link,
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__link--active {
+  background: rgba(43, 122, 155, 0.1);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 #2b7a9b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-nav--primary .md-nav__link {
+    transition: background 0.16s ease, color 0.16s ease !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   Section header nav trái (vd "PROJECT SETTINGS") — KHÁC mục con:
+   label nhỏ, in hoa, mờ, KHÔNG pill (dù là ancestor của trang active)
+   ============================================================ */
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary .md-nav__item--section > label.md-nav__link {
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  opacity: 0.5;
+  background: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: inherit !important;
+  border-radius: 0;
+  padding-left: 0.65em;
+  margin-top: 0.7rem;
+  cursor: default;
+}
+.md-nav--primary .md-nav__item--section > .md-nav__link:hover {
+  opacity: 0.5;
+  color: inherit !important;
+}
+
+/* ============================================================
+   POLISH PASS (v5)
+   ============================================================ */
+
+/* ---------- Scroll-reveal (JS thêm class .u-reveal / .u-reveal-in) ---------- */
+.u-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.u-reveal-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .u-reveal,
+  .u-reveal-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Inline code = chip nhỏ có nền tông accent ---------- */
+.md-typeset code:not(.md-code__content):not(pre code) {
+  border-radius: 6px;
+  padding: 0.1em 0.42em;
+  font-size: 0.82em;
+}
+[data-md-color-scheme="slate"]
+  .md-typeset
+  code:not(.md-code__content):not(pre code) {
+  background: rgba(198, 255, 52, 0.1);
+  color: #e6ffb0;
+}
+[data-md-color-scheme="default"]
+  .md-typeset
+  code:not(.md-code__content):not(pre code) {
+  background: rgba(43, 122, 155, 0.1);
+  color: #1d5a73;
+}
+/* code trong bảng: nhỏ gọn hơn cho khỏi vỡ layout */
+.md-typeset table:not([class]) code {
+  font-size: 0.76em;
+  white-space: nowrap;
+}
+
+/* ---------- Code block: thanh tiêu đề filename (nếu có) + line-height ---------- */
+.md-typeset pre > code {
+  line-height: 1.6;
+}
+.md-typeset .highlight [data-md-color-scheme] {
+  border-radius: var(--u-radius);
+}
+
+/* ---------- Task list (checklist - [ ]) ---------- */
+.md-typeset .task-list-item {
+  margin-bottom: 0.4em;
+}
+.md-typeset .task-list-control .task-list-indicator::before {
+  background-color: var(--md-default-fg-color--lighter);
+}
+[data-md-color-scheme="slate"]
+  .md-typeset
+  .task-list-control
+  [type="checkbox"]:checked
+  + .task-list-indicator::before {
+  background-color: var(--u-lime);
+}
+[data-md-color-scheme="default"]
+  .md-typeset
+  .task-list-control
+  [type="checkbox"]:checked
+  + .task-list-indicator::before {
+  background-color: #2b7a9b;
+}
+
+/* ---------- Heading permalink (¶) — hiện nhẹ khi hover heading ---------- */
+.md-typeset .headerlink {
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  color: var(--md-default-fg-color--lighter);
+}
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink,
+.md-typeset h4:hover .headerlink {
+  opacity: 0.7;
+}
+.md-typeset .headerlink:hover {
+  opacity: 1 !important;
+  color: var(--md-accent-fg-color);
+}
+
+/* ============================================================
+   Admonitions — bo góc, accent nhất quán, phân biệt loại
+   ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 10px;
+  border-width: 0 0 0 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  font-size: 0.78rem;
+}
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* TL;DR (abstract) — nổi bật tông accent, là điểm dừng mắt đầu trang */
+[data-md-color-scheme="slate"] .md-typeset .admonition.abstract {
+  background: rgba(198, 255, 52, 0.06);
+}
+.md-typeset .admonition.abstract > .admonition-title {
+  background: rgba(198, 255, 52, 0.12);
+}
+[data-md-color-scheme="default"] .md-typeset .admonition.abstract {
+  background: rgba(43, 122, 155, 0.05);
+}
+
+/* Conflict (warning ⚔️) — viền cam đậm để cảnh báo bật ra */
+.md-typeset .admonition.warning {
+  box-shadow: 0 2px 14px rgba(255, 145, 0, 0.16);
+}
+
+/* ============================================================
+   Nav trái — divider trên section header + scrollbar mảnh
+   ============================================================ */
+.md-nav--primary .md-nav__item--section {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  padding-top: 0.2rem;
+}
+.md-nav--primary .md-nav__item--section:first-of-type {
+  border-top: none;
+}
+.md-sidebar__scrollwrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-default-fg-color--lighter) transparent;
+}
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 6px;
+}
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background: var(--md-default-fg-color--lighter);
+  border-radius: 999px;
+}
+
+/* ---------- Top tabs: nền dải mờ để pill có "sân khấu" ---------- */
+[data-md-color-scheme="slate"] .md-tabs {
+  background: linear-gradient(180deg, #171717, #0d0d0d);
+}

@@ -1,0 +1,2489 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal Unity 6.3 LTS settings &amp; optimization reference (2D/3D, Mobile/PC)">
+      
+      
+      
+        <link rel="canonical" href="https://teekay-bot.github.io/unity-docs/project-settings/quality/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../player/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Quality - Unity 6.3 Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=6">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quality-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Unity 6.3 Docs" class="md-header__button md-logo" aria-label="Unity 6.3 Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unity 6.3 Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quality
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Chuyển sang light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang light mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Chuyển sang dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang dark mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/teekay-bot/unity-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    teekay-bot/unity-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../packages/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Packages &amp; Assets
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../setup/" class="md-tabs__link">
+          
+  
+  
+  Setup (Quick Start)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Project Settings
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rendering/" class="md-tabs__link">
+          
+  
+  
+  Rendering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../assets/" class="md-tabs__link">
+          
+  
+  
+  Assets
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../scripting/" class="md-tabs__link">
+          
+  
+  
+  Scripting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../build/" class="md-tabs__link">
+          
+  
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../profiling/" class="md-tabs__link">
+          
+  
+  
+  Profiling
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../snippets/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Snippets
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Unity 6.3 Docs" class="md-nav__button md-logo" aria-label="Unity 6.3 Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Unity 6.3 Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/teekay-bot/unity-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    teekay-bot/unity-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages &amp; Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup (Quick Start)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup (Quick Start)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/new-2d-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New 2D Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/new-3d-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New 3D Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#mo-o-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở ở đâu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-levels-template-2d-vs-3d-khac-nhau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality levels: template 2D vs 3D KHÁC nhau
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chon-mo-hinh-quality-level-per-platform-hay-tiered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chọn mô hình quality level: per-platform hay tiered?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-value-quality-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default value — Quality window
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-value-urp-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default value — URP Asset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oc-bang-tren-the-nao-pc-vs-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đọc bảng trên thế nào (PC vs Mobile)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-set-runtime-theo-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code: set runtime theo platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nguon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nguồn
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics-render-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics &amp; Render Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rendering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering/render-pipeline-urp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Render Pipeline (URP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering/draw-calls-batching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Calls &amp; Batching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering/lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lighting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rendering/post-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/textures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Textures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/sprites-atlases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprites &amp; Atlases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/meshes-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meshes &amp; Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting/update-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting/caching-gc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching &amp; GC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting/object-pooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Pooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/pc-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC Build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/mobile-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Profiling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../profiling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../profiling/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snippets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Snippets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#mo-o-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở ở đâu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-levels-template-2d-vs-3d-khac-nhau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality levels: template 2D vs 3D KHÁC nhau
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chon-mo-hinh-quality-level-per-platform-hay-tiered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chọn mô hình quality level: per-platform hay tiered?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-value-quality-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default value — Quality window
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-value-urp-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default value — URP Asset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oc-bang-tren-the-nao-pc-vs-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đọc bảng trên thế nào (PC vs Mobile)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-set-runtime-theo-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code: set runtime theo platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nguon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nguồn
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quality-settings">Quality Settings<a class="headerlink" href="#quality-settings" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>Target: Unity 6.3 LTS (6000.3)</strong> · URP only. Default value trên trang này lấy từ template <strong>Universal 3D</strong> (<code>6000.3.10f1</code>). Field/menu path theo <a href="https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html">Quality Settings — Unity 6.3 Manual</a>.</p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">TL;DR</p>
+<ul>
+<li><strong>Menu:</strong> <code>Edit &gt; Project Settings &gt; Quality</code>.</li>
+<li>Template <strong>3D</strong> → 2 level <strong>Mobile / PC</strong> (2 URP Asset khác nhau); template <strong>2D</strong> → 6 level <strong>Very Low→Ultra</strong> (1 URP Asset chung).</li>
+<li>Phần lớn rendering (MSAA, Shadows, Soft Particles) <strong>nằm ở URP Asset</strong>, không phải cửa sổ Quality.</li>
+<li>Khác biệt Mobile vs PC chủ yếu: <strong>Render Scale 0.8 vs 1.0</strong>, <strong>Shadow Cascades 1 vs 4</strong>, <strong>Soft Shadows off vs on</strong>.</li>
+</ul>
+</div>
+<h2 id="mo-o-au"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 17v2h6v-2zM3 5v2h10V5zm10 16v-2h8v-2h-8v-2h-2v6zM7 9v2H3v2h4v2h2V9zm14 4v-2H11v2zm-6-4h2V7h4V5h-4V3h-2z"></path></svg></span> Mở ở đâu<a class="headerlink" href="#mo-o-au" title="Permanent link">¶</a></h2>
+<p><strong>Menu path:</strong> <code>Edit &gt; Project Settings &gt; Quality</code> — cách chắc chắn nhất. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field, và đặt level active cho từng platform.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/screenshots/quality-window.png" data-title="Cửa sổ Project Settings &gt; Quality của project 3D — 2 level Mobile/PC, level PC đang active dùng PC_RPAsset." data-desc-position="bottom"><img alt="Cửa sổ Project Settings &gt; Quality của project 3D — 2 level Mobile/PC, level PC đang active dùng PC_RPAsset." src="../../assets/screenshots/quality-window.png" width="440"></a></p>
+<div class="admonition note">
+<p class="admonition-title">Để ý trong ảnh (click để phóng to)</p>
+<p>Dòng <em>"A Scriptable Render Pipeline is in use, some settings will not be used and are hidden"</em> xác nhận: dưới URP, nhiều field (Anti Aliasing, Pixel Light Count, Shadows…) bị <strong>ẩn</strong> khỏi cửa sổ Quality — cấu hình thật nằm trong <strong>URP Asset</strong>. Ảnh cũng cho thấy field thật tên <strong>LOD Group Bias</strong> / <strong>Maximum LOD Group Level</strong>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Đổi nhanh Quality level trên toolbar (Unity 6.3)</p>
+<p>Control này <strong>ẩn mặc định</strong> — bật qua tùy biến main toolbar:</p>
+<ol>
+<li>Bấm <strong>dấu ⋮ (3 chấm)</strong> ở <strong>góc phải trên main toolbar</strong> (cạnh <code>Layout</code> / <code>?</code>).</li>
+<li>Chọn <strong>Editor Utility → Quality</strong> (hoặc <em>Show All</em> để hiện hết).</li>
+</ol>
+<p>Sau đó ô <strong>Quality</strong> xuất hiện trên main toolbar — bấm để đổi level, không cần mở Project Settings. (Main toolbar = hàng có nút Play/Pause; <em>không phải</em> menu bar File/Edit.) Nguồn: <a href="https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html">What's New 6.3</a>.</p>
+</div>
+<h2 id="quality-levels-template-2d-vs-3d-khac-nhau"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 16.54 7.37-5.74L21 12.07l-9 7-9-7 1.62-1.26zM12 14 3 7l9-7 9 7zm0-11.47L6.26 7 12 11.47 17.74 7zm0 18.94 7.37-5.74L21 17l-9 7-9-7 1.62-1.26z"></path></svg></span> Quality levels: template 2D vs 3D KHÁC nhau<a class="headerlink" href="#quality-levels-template-2d-vs-3d-khac-nhau" title="Permanent link">¶</a></h2>
+<p>2 template tạo <strong>bộ quality level khác nhau</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Universal 3D</label><label for="__tabbed_1_2">Universal 2D</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>2 level: <code>Mobile</code> và <code>PC</code></strong>, mỗi level trỏ một URP Asset riêng qua field <strong>Render Pipeline</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>URP Asset</th>
+<th>Default cho platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mobile</strong> (0)</td>
+<td><code>Mobile_RPAsset</code></td>
+<td>Android, iOS, WebGL…</td>
+</tr>
+<tr>
+<td><strong>PC</strong> (1)</td>
+<td><code>PC_RPAsset</code></td>
+<td>Standalone (Win/Mac/Linux), consoles</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>m_PerPlatformDefaultQuality</code>: Android→Mobile, Standalone→PC. Mỗi level <code>excludedTargetPlatforms</code> loại nền không liên quan.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p><strong>6 level: <code>Very Low → Low → Medium → High → Very High → Ultra</code></strong> — tất cả trỏ <strong>cùng một</strong> URP Asset (<code>UniversalRP.asset</code>), không loại platform. Current mặc định: <strong>Very Low</strong>.</p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bảng default bên dưới = template 3D</p>
+<p>Các bảng default ở dưới lấy từ <strong>template Universal 3D (Mobile/PC)</strong>. Template <strong>2D</strong> dùng 6 level Very Low→Ultra chung 1 URP Asset — field cùng cấu trúc, tự chỉnh; nguyên tắc tối ưu PC vs Mobile vẫn áp dụng. Riêng 2D ít phụ thuộc shadow/cascade hơn (xem <a href="../../rendering/render-pipeline-urp/">2D Renderer</a>).</p>
+</div>
+<h2 id="chon-mo-hinh-quality-level-per-platform-hay-tiered"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14c-3.36 0-4.46 1.35-4.82 2.24C9.25 16.7 10 17.76 10 19a3 3 0 0 1-3 3 3 3 0 0 1-3-3c0-1.31.83-2.42 2-2.83V7.83A2.99 2.99 0 0 1 4 5a3 3 0 0 1 3-3 3 3 0 0 1 3 3c0 1.31-.83 2.42-2 2.83v5.29c.88-.65 2.16-1.12 4-1.12 2.67 0 3.56-1.34 3.85-2.23A3.01 3.01 0 0 1 14 7a3 3 0 0 1 3-3 3 3 0 0 1 3 3c0 1.34-.88 2.5-2.09 2.86C17.65 11.29 16.68 14 13 14m-6 4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1M7 4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m10 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"></path></svg></span> Chọn mô hình quality level: per-platform hay tiered?<a class="headerlink" href="#chon-mo-hinh-quality-level-per-platform-hay-tiered" title="Permanent link">¶</a></h2>
+<p>Hai template dùng 2 triết lý khác nhau. Tiêu chí chọn gọn lại ở <strong>một câu hỏi: người chơi có được tự đổi graphics không?</strong></p>
+<pre class="mermaid"><code>graph TD
+  A{Người chơi tự đổi&lt;br/&gt;graphics?} --&gt;|Không| B[Per-platform&lt;br/&gt;Mobile / PC]
+  A --&gt;|Có| C[Tiered presets&lt;br/&gt;Very Low → Ultra]
+  B --&gt; B1[1 URP Asset riêng&lt;br/&gt;mỗi nền tảng · ít maintain]
+  C --&gt; C1[1 URP Asset + tune&lt;br/&gt;cho mỗi tier · maintain nặng]</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Per-platform</strong> (Mobile/PC — như 3D template)</th>
+<th><strong>Tiered presets</strong> (Very Low→Ultra — như 2D template)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mục đích</td>
+<td>Quality <strong>cố định theo nền tảng</strong>, build tự chọn đúng level</td>
+<td>Người chơi / auto-detect <strong>tự chọn</strong> mức graphics</td>
+</tr>
+<tr>
+<td>URP Asset</td>
+<td>1 asset <strong>riêng cho mỗi nền</strong> (đã khác nhau sẵn)</td>
+<td>Nên 1 asset <strong>riêng cho mỗi tier</strong> (phải tự tạo + tune)</td>
+</tr>
+<tr>
+<td>Maintain</td>
+<td>Nhẹ (2 asset)</td>
+<td>Nặng hơn (nhiều asset)</td>
+</tr>
+<tr>
+<td>Hợp với</td>
+<td>Mobile game, game không cho đổi graphics</td>
+<td>Game PC có menu "Low/Medium/High/Ultra"</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Bẫy: nhiều level ≠ nhiều mức chất lượng</p>
+<p>Template 2D có 6 level nhưng <strong>cả 6 trỏ chung 1 URP Asset</strong> → giống hệt nhau cho tới khi bạn tạo URP Asset riêng cho từng tier rồi tune (render scale, shadow, MSAA…). "6 level" không tự nó tạo ra 6 mức chất lượng.</p>
+</div>
+<p><strong>Muốn cho người chơi đổi graphics (tiered):</strong></p>
+<ol>
+<li>Tạo 1 URP Asset cho mỗi tier (vd <code>URP_Low</code>, <code>URP_Medium</code>, <code>URP_High</code>) và tune từng cái.</li>
+<li><code>Project Settings &gt; Quality</code> → tạo các level, gán URP Asset tương ứng vào field <strong>Render Pipeline</strong>.</li>
+<li>
+<p>Runtime đổi bằng code:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">QualitySettings</span><span class="p">.</span><span class="n">SetQualityLevel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">applyExpensiveChanges</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// theo index</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// hoặc lấy danh sách tên: var names = QualitySettings.names;</span>
+</span></code></pre></div>
+</li>
+</ol>
+<p><strong>Quality cố định theo nền tảng (per-platform):</strong> giữ Mobile/PC như template 3D — gọn, ít maintain. Đây là mặc định Unity chọn cho template 3D.</p>
+<div class="admonition note">
+<p class="admonition-title">URP điều khiển phần lớn rendering</p>
+<p>Trong cửa sổ Quality, các field <strong>Anti Aliasing (MSAA), Shadows, Soft Particles, Pixel Light Count</strong> thực tế bị URP "vô hiệu" — cấu hình thật nằm trong <strong>URP Asset</strong> (xem bảng URP Asset bên dưới và <a href="../../rendering/render-pipeline-urp/">Render Pipeline (URP)</a>). Đó là lý do <code>antiAliasing</code> = <strong>0 (Disabled)</strong> ở cả 2 level trong template.</p>
+</div>
+<h2 id="default-value-quality-window"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 8h4V4h12v12h-4v4H4zm12 0v6h2V6h-8v2zM6 12v6h8v-6z"></path></svg></span> Default value — Quality window<a class="headerlink" href="#default-value-quality-window" title="Permanent link">¶</a></h2>
+<p>Các field <strong>còn thực sự tác dụng dưới URP</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Mobile</th>
+<th>PC</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VSync Count</td>
+<td><strong>Don't Sync</strong> (0)</td>
+<td><strong>Don't Sync</strong> (0)</td>
+<td>Cả 2 = 0</td>
+</tr>
+<tr>
+<td>Anisotropic Textures</td>
+<td><strong>Per Texture</strong> (1)</td>
+<td><strong>Forced On</strong> (2)</td>
+<td></td>
+</tr>
+<tr>
+<td>Global Mipmap Limit</td>
+<td>0 (Full Res)</td>
+<td>0 (Full Res)</td>
+<td></td>
+</tr>
+<tr>
+<td>Mipmap Streaming</td>
+<td><strong>Off</strong></td>
+<td><strong>Off</strong></td>
+<td>Budget 512 MB, 512 renderers/frame, max reduction 2, 1024 IO khi bật</td>
+</tr>
+<tr>
+<td>LOD Group Bias</td>
+<td><strong>1</strong></td>
+<td><strong>2</strong></td>
+<td>PC giữ LOD cao xa hơn</td>
+</tr>
+<tr>
+<td>Maximum LOD Group Level</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>LOD Cross Fade</td>
+<td>On (1)</td>
+<td>On (1)</td>
+<td></td>
+</tr>
+<tr>
+<td>Particle Raycast Budget</td>
+<td>256</td>
+<td>256</td>
+<td></td>
+</tr>
+<tr>
+<td>Async Upload Time Slice / Buffer</td>
+<td>2 ms / 16 MB</td>
+<td>2 ms / 16 MB</td>
+<td>Persistent Buffer: On</td>
+</tr>
+<tr>
+<td>Skin Weights</td>
+<td><strong>2 Bones</strong></td>
+<td><strong>4 Bones</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Realtime Reflection Probes</td>
+<td>Off</td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td>Realtime GI CPU Usage</td>
+<td>100 (Unlimited)</td>
+<td>100 (Unlimited)</td>
+<td></td>
+</tr>
+<tr>
+<td>Anti Aliasing (MSAA)</td>
+<td>Disabled (0)*</td>
+<td>Disabled (0)*</td>
+<td>*thực tế dùng URP Asset</td>
+</tr>
+</tbody>
+</table>
+<h2 id="default-value-urp-asset"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15l-1.89 1.07L16 8.61l1.96-1.11zM6.04 7.5 12 10.85l1.96-1.1-5.88-3.4zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"></path></svg></span> Default value — URP Asset<a class="headerlink" href="#default-value-urp-asset" title="Permanent link">¶</a></h2>
+<p>Đây mới là nơi quyết định rendering (<code>Mobile_RPAsset</code> / <code>PC_RPAsset</code>):</p>
+<table>
+<thead>
+<tr>
+<th>URP Asset field</th>
+<th>Mobile_RPAsset</th>
+<th>PC_RPAsset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MSAA</strong></td>
+<td>Disabled</td>
+<td>Disabled</td>
+</tr>
+<tr>
+<td><strong>Render Scale</strong></td>
+<td><strong>0.8</strong></td>
+<td><strong>1.0</strong></td>
+</tr>
+<tr>
+<td>HDR</td>
+<td>On (32-bit)</td>
+<td>On (32-bit)</td>
+</tr>
+<tr>
+<td>Upscaling Filter</td>
+<td>Automatic</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>Depth Texture</td>
+<td><strong>Off</strong></td>
+<td><strong>On</strong></td>
+</tr>
+<tr>
+<td>Main Light</td>
+<td>Per Pixel, shadows on</td>
+<td>Per Pixel, shadows on</td>
+</tr>
+<tr>
+<td>Main Light Shadow Resolution</td>
+<td><strong>1024</strong></td>
+<td><strong>2048</strong></td>
+</tr>
+<tr>
+<td>Additional Lights</td>
+<td>Per Pixel, Per Object Limit 4</td>
+<td>Per Pixel, Per Object Limit 4</td>
+</tr>
+<tr>
+<td>Shadow Max Distance</td>
+<td>50</td>
+<td>50</td>
+</tr>
+<tr>
+<td><strong>Shadow Cascades</strong></td>
+<td><strong>1</strong></td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>Soft Shadows</strong></td>
+<td><strong>Off</strong></td>
+<td><strong>On</strong> (High)</td>
+</tr>
+<tr>
+<td>Color Grading</td>
+<td>LDR, LUT 32</td>
+<td>LDR, LUT 32</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Field path: <code>URP Asset &gt; Quality</code> (HDR, MSAA, Render Scale), <code>&gt; Lighting</code> (Main/Additional Lights), <code>&gt; Shadows</code> (Max Distance, Cascades, Soft Shadows). Chi tiết: <a href="../../rendering/render-pipeline-urp/">Render Pipeline (URP)</a>.</p>
+</blockquote>
+<h2 id="oc-bang-tren-the-nao-pc-vs-mobile"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"></path></svg></span> Đọc bảng trên thế nào (PC vs Mobile)<a class="headerlink" href="#oc-bang-tren-the-nao-pc-vs-mobile" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Unity đã tune sẵn 2 preset hợp lý. Hiểu <strong>tại sao</strong> để biết khi nào nên đổi.</p>
+</blockquote>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">PC</label><label for="__tabbed_2_2">Mobile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Template để PC "ăn chắc chất lượng":</p>
+<ul>
+<li><strong>Render Scale 1.0</strong> — render full res, GPU desktop dư.</li>
+<li><strong>Shadow Cascades 4 + Soft Shadows On + shadowmap 2048</strong> — bóng đẹp, tầm xa.</li>
+<li><strong>Anisotropic Forced On</strong>, <strong>LOD Bias 2</strong> (giữ mesh nét xa hơn), <strong>Skin Weights 4</strong>.</li>
+<li><strong>Depth Texture On</strong> — nhiều effect (SSAO…) cần.</li>
+</ul>
+<p><strong>Có thể đổi:</strong> muốn cạnh mượt hơn → bật <strong>MSAA 2x/4x</strong> trong <code>PC_RPAsset &gt; Quality</code> (template để Disabled). Muốn tránh tearing → VSync <strong>Every V Blank</strong> (template để Don't Sync, hợp cho game cap fps).</p>
+</div>
+<div class="tabbed-block">
+<p>Template cắt giảm cho tile-based GPU / nhiệt / pin:</p>
+<ul>
+<li><strong>Render Scale 0.8</strong> — render ~64% số pixel rồi upscale → nhẹ fillrate (đòn bẩy lớn nhất trên mobile).</li>
+<li><strong>Shadow Cascades 1 + Soft Shadows Off + shadowmap 1024</strong> — shadow rẻ.</li>
+<li><strong>Depth Texture Off</strong> — tiết kiệm bandwidth (bật lại nếu shader cần).</li>
+<li><strong>Anisotropic Per Texture</strong> (không Forced), <strong>LOD Bias 1</strong> (xuống LOD thấp sớm), <strong>Skin Weights 2</strong>.</li>
+</ul>
+<p><strong>Có thể đổi:</strong> kiểm soát fps bằng <code>Application.targetFrameRate</code> thay vì VSync. Nếu vẫn nặng → hạ Render Scale tiếp (0.7) hoặc bật <strong>FSR 1.0</strong> ở Upscaling Filter.</p>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Đòn bẩy tối ưu mobile theo thứ tự</p>
+<p>1) <strong>Render Scale</strong> ↓ · 2) <strong>Shadow</strong> (cascades/distance/soft off) · 3) <strong>Depth/Opaque Texture</strong> off · 4) <strong>MSAA</strong> off · 5) Additional Lights Per Vertex / giảm Per Object Limit.</p>
+</div>
+<h2 id="code-set-runtime-theo-platform"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"></path></svg></span> Code: set runtime theo platform<a class="headerlink" href="#code-set-runtime-theo-platform" title="Permanent link">¶</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">PC</label><label for="__tabbed_3_2">Mobile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">QualitySettings</span><span class="p">.</span><span class="n">vSyncCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">          </span><span class="c1">// Every V Blank (tránh tearing)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Application</span><span class="p">.</span><span class="n">targetFrameRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span><span class="w">        </span><span class="c1">// hoặc 30 để tiết kiệm pin</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">QualitySettings</span><span class="p">.</span><span class="n">vSyncCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">          </span><span class="c1">// Don't Sync — control fps bằng targetFrameRate</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="nguon"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"></path></svg></span> Nguồn<a class="headerlink" href="#nguon" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Nguồn dữ liệu:</strong> template <strong>Universal 3D</strong> <code>6000.3.10f1</code> — <code>ProjectSettings/QualitySettings.asset</code>, <code>Assets/Settings/PC_RPAsset.asset</code>, <code>Assets/Settings/Mobile_RPAsset.asset</code>.</li>
+<li><a href="https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html">Quality Settings — Unity 6.3 Manual</a></li>
+<li><a href="https://docs.unity3d.com/6000.3/Documentation/Manual/urp/universalrp-asset.html">URP Asset reference — Unity 6.3</a></li>
+<li><a href="https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html">What's New in Unity 6.3</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js?v=2"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
