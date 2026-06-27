@@ -87,9 +87,10 @@
   background: rgba(198, 255, 52, 0.12);
   border-color: rgba(198, 255, 52, 0.3);
   transform: scale(1.13);
-  margin-inline: 0.45em;
   z-index: 2;
 }
+/* hàng xóm 2 bên được JS đẩy ra qua translateX trên .md-tabs__link;
+   transition transform đã khai báo ở rule .md-tabs__link gốc phía trên */
 .md-tabs__link--active {
   opacity: 1;
   color: var(--u-lime);
