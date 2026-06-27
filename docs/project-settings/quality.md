@@ -32,6 +32,33 @@
 !!! note "Bảng default bên dưới = template 3D"
     Các bảng default ở dưới lấy từ **template Universal 3D (Mobile/PC)**. Template **2D** dùng 6 level Very Low→Ultra chung 1 URP Asset — field cùng cấu trúc, tự chỉnh; nguyên tắc tối ưu PC vs Mobile vẫn áp dụng. Riêng 2D ít phụ thuộc shadow/cascade hơn (xem [2D Renderer](../rendering/render-pipeline-urp.md)).
 
+## Chọn mô hình quality level: per-platform hay tiered?
+
+Hai template dùng 2 triết lý khác nhau. Tiêu chí chọn gọn lại ở **một câu hỏi: người chơi có được tự đổi graphics không?**
+
+| | **Per-platform** (Mobile/PC — như 3D template) | **Tiered presets** (Very Low→Ultra — như 2D template) |
+|---|---|---|
+| Mục đích | Quality **cố định theo nền tảng**, build tự chọn đúng level | Người chơi / auto-detect **tự chọn** mức graphics |
+| URP Asset | 1 asset **riêng cho mỗi nền** (đã khác nhau sẵn) | Nên 1 asset **riêng cho mỗi tier** (phải tự tạo + tune) |
+| Maintain | Nhẹ (2 asset) | Nặng hơn (nhiều asset) |
+| Hợp với | Mobile game, game không cho đổi graphics | Game PC có menu "Low/Medium/High/Ultra" |
+
+!!! warning "Bẫy: nhiều level ≠ nhiều mức chất lượng"
+    Template 2D có 6 level nhưng **cả 6 trỏ chung 1 URP Asset** → giống hệt nhau cho tới khi bạn tạo URP Asset riêng cho từng tier rồi tune (render scale, shadow, MSAA…). "6 level" không tự nó tạo ra 6 mức chất lượng.
+
+**Muốn cho người chơi đổi graphics (tiered):**
+
+1. Tạo 1 URP Asset cho mỗi tier (vd `URP_Low`, `URP_Medium`, `URP_High`) và tune từng cái.
+2. `Project Settings > Quality` → tạo các level, gán URP Asset tương ứng vào field **Render Pipeline**.
+3. Runtime đổi bằng code:
+
+    ```csharp
+    QualitySettings.SetQualityLevel(2, applyExpensiveChanges: true); // theo index
+    // hoặc lấy danh sách tên: var names = QualitySettings.names;
+    ```
+
+**Quality cố định theo nền tảng (per-platform):** giữ Mobile/PC như template 3D — gọn, ít maintain. Đây là mặc định Unity chọn cho template 3D.
+
 !!! note "URP điều khiển phần lớn rendering"
     Trong cửa sổ Quality, các field **Anti Aliasing (MSAA), Shadows, Soft Particles, Pixel Light Count** thực tế bị URP "vô hiệu" — cấu hình thật nằm trong **URP Asset** (xem bảng URP Asset bên dưới và [Render Pipeline (URP)](../rendering/render-pipeline-urp.md)). Đó là lý do `antiAliasing` = **0 (Disabled)** ở cả 2 level trong template.
 
