@@ -20,8 +20,8 @@
 | **Compression** | Mức nén (None/Low/Normal/High) | `Normal` mặc định; cân nét vs size |
 | **Use Crunch Compression** | Nén thêm trên đĩa (build nhỏ hơn) | Tốt để giảm size; tốn thời gian import |
 
-!!! warning "Cần verify"
-    Tên/nhãn chính xác của vài field trong Inspector 6.3 (vd nhóm **Advanced**, vị trí **Crunch**) nên đối chiếu trực tiếp Editor khi chụp screenshot.
+!!! info "Nhóm Advanced"
+    Các field như **Non-Power of 2**, **Read/Write**, **Generate Mipmap**, **Swizzle** nằm trong nhóm **Advanced** (xem ảnh phần dưới). **Use Crunch Compression** xuất hiện ở tab platform khi Format hỗ trợ (DXT/ETC), kèm slider **Compressor Quality**.
 
 ## :material-tune-variant: Nén theo platform (override)
 

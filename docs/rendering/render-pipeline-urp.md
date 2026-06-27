@@ -74,8 +74,8 @@ Field **Rendering Path**: **Forward**, **Forward+**, **Deferred**, **Deferred+**
 | **Forward+** | Forward tối ưu, xử lý **nhiều light** không vướng per-object limit | Default phổ biến ở Unity 6 |
 | **Deferred / Deferred+** | Deferred cho cảnh nhiều light phức tạp | Cân nhắc bandwidth |
 
-!!! warning "Cần verify"
-    Doc URP 6.3 (Universal Renderer) **không nêu** khuyến nghị path nào cho mobile vs desktop hay ngưỡng số light cụ thể. Khuyến nghị "Forward+/Deferred cho PC, Forward/Forward+ cho mobile" bên dưới là **nguyên tắc tối ưu chung**, hãy đo thực tế (Profiler) trước khi chốt cho game của bạn.
+!!! note "Đây là nguyên tắc chung — hãy tự đo"
+    Doc URP 6.3 (Universal Renderer) **không quy định** path nào cho mobile vs desktop hay ngưỡng số light cụ thể. Gợi ý "Forward+/Deferred cho PC, Forward/Forward+ cho mobile" là **nguyên tắc tối ưu chung**, không phải mặc định bắt buộc — hãy đo thực tế bằng [Profiler](../profiling/tools.md) cho game của bạn.
 
 Các setting Universal Renderer khác: **Depth Priming Mode** (Disabled/Auto/Forced), **Native RenderPass**, **Transparent Receive Shadows**, **Renderer Features** (list), **Filtering** layer masks.
 

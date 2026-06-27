@@ -40,8 +40,8 @@
     | Reuse Collision Callbacks | **On** | Mặc định 6.3 |
     | Auto Sync Transforms | **Off** | Dùng `Physics2D.SyncTransforms()` |
 
-!!! warning "Cần verify — 2D physics Box2D (6.3)"
-    Unity 6.3 có cập nhật backend 2D physics. Chi tiết "API low-level mới dựa trên **Box2D v3**, chạy song song API cũ và sẽ thay thế dần" cần đối chiếu [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html) trước khi khẳng định trong doc.
+!!! info "Mới ở 6.3 — API 2D physics low-level (Box2D v3)"
+    Unity 6.3 **thêm** bộ API 2D physics low-level tích hợp **Box2D v3** (bản Box2D mới nhất), nằm ở namespace `UnityEngine.LowLevelPhysics2D`. Ưu điểm: đa luồng nhanh hơn, tính xác định (determinism) tốt hơn, debug trực quan trong Editor & Runtime. Đây là **bổ sung chạy song song** với hệ 2D physics hiện có (component Rigidbody2D… ở trên vẫn dùng bình thường), **không** thay thế. (Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
 
 ## :material-flash: Tối ưu
 

@@ -15,17 +15,17 @@
 |---|---|---|
 | **Scale Factor** | Hệ số scale khi import | Chỉnh để 1 unit = 1 m |
 | **Mesh Compression** | Nén mesh (Off/Low/Medium/High) | Tăng dần tới khi thấy méo |
-| **Read/Write Enabled** | Giữ bản mesh ở CPU | **Off** trừ khi đọc/sửa mesh runtime |
+| **Read/Write** | Giữ bản mesh ở CPU | **Off** trừ khi đọc/sửa mesh runtime |
 | **Optimize Mesh** | Sắp lại vertex/index cho GPU | **On** |
 | **Generate Colliders** | Tạo Mesh Collider | Off trừ khi cần |
 | **Normals / Tangents** | Import hay tính lại | Tangents `Calculate` nếu có normal map |
-| **Blend Shapes** | Import morph target | Tắt nếu không dùng |
+| **Import BlendShapes** | Import morph target | Tắt nếu không dùng |
 
-!!! warning "Conflict: Read/Write Enabled ⚔️ RAM"
-    Bật **Read/Write Enabled** khiến mesh tồn tại **2 bản** (CPU + GPU) → gấp đôi RAM mesh. Chỉ bật khi thật sự cần truy cập mesh ở runtime (vd procedural, `Mesh.vertices`). Tương tự có **Read/Write** cho texture.
+!!! warning "Conflict: Read/Write ⚔️ RAM"
+    Bật **Read/Write** khiến mesh tồn tại **2 bản** (CPU + GPU) → gấp đôi RAM mesh. Chỉ bật khi thật sự cần truy cập mesh ở runtime (vd procedural, `Mesh.vertices`). Tương tự có **Read/Write** cho texture.
 
-!!! warning "Cần verify"
-    Nhãn/đường dẫn vài field trong Inspector Model 6.3 (vd nhóm **Normals & Tangents**, tab **Rig/Animation**) nên đối chiếu trực tiếp Editor.
+!!! info "Bố cục Inspector Model"
+    Tab **Model** chia thành các nhóm *Scene* (có **Import BlendShapes**), *Meshes* (**Mesh Compression**, **Read/Write**, **Optimize Mesh**), *Geometry* (**Normals**, **Tangents**, **Generate Colliders**). Rig & animation nằm ở **tab Rig** và **tab Animation** riêng. (Nguồn: [Model Import Settings 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/FBXImporter-Model.html).)
 
 ## :material-arrow-collapse: LOD (Level of Detail)
 

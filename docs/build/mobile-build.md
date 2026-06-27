@@ -34,8 +34,11 @@
 - Cần **keystore** để ký build phát hành: `Player > Publishing Settings > Keystore Manager`.
 - **Giữ keystore + mật khẩu an toàn** — mất là không update được app trên Play.
 
-!!! warning "Cần verify"
-    Đường dẫn chính xác **Publishing Settings / Keystore Manager** và mục **Minimum API Level / Target API Level** trong Player (Android) 6.3 nên đối chiếu trực tiếp Editor khi chụp screenshot.
+!!! info "Đường dẫn trong Player (Android)"
+    - **Keystore / ký app:** `Project Settings > Player > Android > Publishing Settings` → bật **Custom Keystore**, dùng **Keystore Manager** để tạo/nạp key (Unity *không* lưu mật khẩu keystore).
+    - **API Level:** `Project Settings > Player > Android > Other Settings` → **Minimum API Level** và **Target API Level** (Target phải ≥ Minimum). Unity 6.3 hỗ trợ tối thiểu Android 6.0 / API 23 và target tới API 35/36.
+    
+    (Nguồn: [Android Player settings](https://docs.unity3d.com/Manual/class-PlayerSettingsAndroid.html), [Android keystores](https://docs.unity3d.com/6000.3/Documentation/Manual/android-keystore.html).)
 
 ## :material-apple-ios: iOS
 

@@ -34,8 +34,8 @@
 !!! note "Để ý trong ảnh (click để phóng to)"
     **Type = Master** (atlas chính; còn loại *Variant*). Mục **Packing**: *Allow Rotation* + *Tight Packing* (gói chặt hơn) + *Padding 4*. Mục **Texture** có *Generate Mip Maps* (tắt cho sprite) và **Show Platform Settings For** để đặt format theo platform. **Objects for Packing** là nơi kéo sprite/thư mục vào.
 
-!!! warning "Cần verify"
-    Chế độ **Sprite Packer** trong `Project Settings > Editor` (bật đóng gói atlas) nên đối chiếu trực tiếp Editor 6.3.
+!!! info "Sprite Packer mode (bật đóng gói atlas)"
+    Bật/tắt đóng gói atlas ở `Edit > Project Settings > Editor > Sprite Packer > Mode`. Các lựa chọn: **Sprite Atlas V1 - Enabled** / **V1 - Always Enabled** / **Sprite Atlas V2 - Enabled** / **V2 - Enabled for Builds**. Bật **V2** thì atlas mới tạo mặc định là V2 và Unity tự migrate atlas V1 cũ (nên backup trước — V2 không quay lại V1 được). (Nguồn: [Sprite Packer Modes](https://docs.unity3d.com/Manual/SpritePackerModes.html).)
 
 ## :material-flash: Atlas → ít draw call
 

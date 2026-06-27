@@ -32,8 +32,8 @@
 - **Quality** (Vorbis): kéo xuống ~70% thường vẫn ổn tai, giảm size đáng kể.
 - **Sample Rate Setting:** `Optimize Sample Rate` hoặc override để hạ sample rate clip không cần nét.
 
-!!! warning "Cần verify"
-    Tên/nhãn chính xác các tùy chọn (vd `Preload Audio Data`, `Load In Background`) trong Inspector 6.3 nên xác nhận trực tiếp Editor.
+!!! info "Field khác trong Inspector"
+    Ngoài các field trên, Inspector AudioClip 6.3 còn có **Force To Mono**, **Normalize**, **Load In Background**, **Ambisonic** (mục chung) và **Preload Audio Data** (trong override theo platform). (Nguồn: [AudioClip import settings 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/class-AudioClip.html).)
 
 ## :material-account-voice: Force To Mono & 3D
 

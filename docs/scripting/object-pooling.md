@@ -60,8 +60,8 @@ public class Bullet : MonoBehaviour
 }
 ```
 
-!!! warning "Cần verify"
-    Tên tham số constructor `ObjectPool<T>` (`actionOnGet`, `actionOnRelease`, `collectionCheck`…) theo [Scripting API 6.3](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Pool.ObjectPool_1.html) — đối chiếu khi code thật.
+!!! info "Chữ ký constructor"
+    Thứ tự tham số: `ObjectPool<T>(createFunc, actionOnGet, actionOnRelease, actionOnDestroy, collectionCheck, defaultCapacity, maxSize)`. `collectionCheck` (mặc định true) cảnh báo nếu lỡ `Release` cùng một object hai lần — hữu ích lúc dev. (Nguồn: [ObjectPool API 6.3](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Pool.ObjectPool_1-ctor.html).)
 
 ## :material-refresh: Reset trạng thái khi lấy ra
 

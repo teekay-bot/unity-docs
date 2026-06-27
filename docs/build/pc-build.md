@@ -41,8 +41,8 @@
 | Bảo vệ code | Dễ decompile | **Khó** hơn |
 | Khi nào | Dev/iterate, đa số game PC | Release cần bảo vệ/hiệu năng |
 
-!!! warning "Cần verify"
-    Đường dẫn/nhãn chính xác trong cửa sổ Build Profiles 6.3 (vd nút Build, mục Platform Settings) nên xác nhận trực tiếp Editor.
+!!! info "Build Profiles"
+    Xem ảnh cửa sổ **Build Profiles** ở [trang Overview](index.md): cột Platforms, Scene List dùng chung, Platform Settings (Architecture, Development Build…) và nút **Build** / **Build And Run** ở góc dưới-phải.
 
 ## :material-flash: Checklist trước khi build release
 
