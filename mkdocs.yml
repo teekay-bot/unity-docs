@@ -65,7 +65,7 @@ plugins:
       auto_themed: true
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra.css?v=2
 
 nav:
   - Home: index.md
