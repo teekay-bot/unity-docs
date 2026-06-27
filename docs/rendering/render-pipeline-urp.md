@@ -17,10 +17,17 @@ URP điều khiển rendering qua **2 asset chính**:
 
 - **Gán pipeline mặc định:** `Edit > Project Settings > Graphics` → mục **Scriptable Render Pipeline Settings** → chọn URP Asset.
 - **Gán theo Quality level:** `Edit > Project Settings > Quality` → field **Render Pipeline** của mỗi level (xem [Quality](../project-settings/quality.md)). Cho phép mỗi level (Low/High…) một URP Asset khác nhau.
-- **Tạo asset:** chuột phải trong Project → `Create > Rendering > URP Asset (with Universal Renderer)` cho 3D, hoặc bản 2D Renderer cho 2D.
+- **Tạo asset** — chuột phải trong Project → `Create > Rendering >` (verified 6.3):
+    - **URP Asset (with Universal Renderer)** — tạo URP Asset + Universal Renderer (3D) cùng lúc.
+    - **URP Asset (with 2D Renderer)** — tạo URP Asset + 2D Renderer (2D).
+    - **URP Universal Renderer** / **URP 2D Renderer** — chỉ renderer data (để gán vào URP Asset).
+    - **URP Post-process Data** — data cho post-processing.
 
-!!! warning "Cần verify"
-    Tên menu `Create > Rendering > …` và bước tạo **2D Renderer** trong 6.3 cần kiểm tra lại trực tiếp trong Editor (Unity hay đổi nhãn menu Create giữa các version). Nếu dùng template **2D (URP)** hoặc **3D (URP)** khi tạo project thì asset đã được tạo & gán sẵn.
+!!! tip "Dùng template thì khỏi tạo tay"
+    Tạo project bằng template **Universal 2D / Universal 3D** thì các asset trên đã được tạo & gán sẵn (xem [Setup](../setup/index.md)).
+
+!!! note "📸 Screenshot cần chụp"
+    Menu `Create > Rendering` (thấy URP Asset (with Universal/2D Renderer), URP Post-process Data…). → `create-rendering-menu.png`
 
 ## :material-package-variant-closed: URP Asset — các nhóm setting
 

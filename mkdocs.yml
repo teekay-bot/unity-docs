@@ -12,6 +12,7 @@ theme:
     code: JetBrains Mono
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - navigation.instant
@@ -65,7 +66,7 @@ plugins:
       auto_themed: true
 
 extra_css:
-  - stylesheets/extra.css?v=2
+  - stylesheets/extra.css?v=3
 
 nav:
   - Home: index.md
