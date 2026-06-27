@@ -9,7 +9,8 @@ Chụp các cửa sổ dưới đây trong Unity 6.3, lưu PNG vào `docs/assets
 | Trang | File | Cần chụp gì | Trạng thái |
 |---|---|---|---|
 | project-settings/quality.md | `quality-window.png` | Cửa sổ Quality (Mobile/PC, Render Pipeline Asset, dòng "SRP in use…") | ✅ Done (3D) |
-| project-settings/player.md | `player-other-settings.png` | `Player > Other Settings`: Color Space, Scripting Backend, Api Compatibility Level, Managed Stripping Level | ⬜ Chờ |
-| project-settings/graphics-render-pipeline.md | `graphics-srp.png` | `Graphics`: Scriptable Render Pipeline Settings (URP Asset) + Shader Stripping / Shader Build Settings | ⬜ Chờ |
+| project-settings/player.md | `player-other-pc.png` | `Player > Other Settings` tab **PC/Standalone** (Scripting Backend=Mono, Managed Stripping=Disabled) | 🟡 Đã có ảnh, chờ lưu |
+| project-settings/player.md | `player-other-android.png` | `Player > Other Settings` tab **Android** (Scripting Backend=IL2CPP, Stripping=Minimal, ARM64) | 🟡 Đã có ảnh, chờ lưu |
+| project-settings/graphics-render-pipeline.md | `graphics-srp.png` | `Graphics`: Default Render Pipeline + Shader Build Settings + Shader Stripping | 🟡 Đã có ảnh, chờ lưu |
 
 <!-- Thêm dòng mới khi viết trang có placeholder screenshot -->

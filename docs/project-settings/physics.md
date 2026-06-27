@@ -50,6 +50,9 @@
 - Giữ **Auto Sync Transforms = Off** (default): tránh sync ngầm tốn kém mỗi khi đọc transform; chủ động gọi `SyncTransforms()` khi thật sự cần.
 - **Reuse Collision Callbacks = On** (default): giảm rác GC sinh ra từ `Collision`/`Collision2D` object mỗi callback.
 
+!!! tip "Mới ở 6.3 — Disable & strip physics back end"
+    Nếu game **không dùng physics**, Unity 6.3 cho **tắt & strip hẳn physics integration SDK** khỏi project → **build nhỏ hơn** (vài build platform) + tài nguyên tối ưu hơn. (Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
+
 ## :material-link-variant: Nguồn
 
 - Dữ liệu: template `6000.3.10f1` — `DynamicsManager.asset`, `Physics2DSettings.asset`.

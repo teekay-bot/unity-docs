@@ -16,7 +16,7 @@
 
 ## :material-palette: Gán URP pipeline
 
-- **Scriptable Render Pipeline Settings** → trỏ tới một **URP Asset** (default project = pipeline mặc định toàn cục).
+- Section **Set Default Render Pipeline Asset** → field **Default Render Pipeline** = URP Asset dùng khi **Quality level đang active chưa gán** Render Pipeline riêng (template 3D = `PC_RPAsset`).
 - Mỗi **Quality level** có thể override bằng URP Asset riêng (xem [Quality](quality.md)) — đó là cách tách **Mobile/PC**.
 - Project chỉ dùng URP → field này **luôn** có URP Asset, không để trống.
 
@@ -29,13 +29,18 @@
 !!! warning "Conflict: SRP Batcher ⚔️ GPU Instancing"
     **Không dùng chung được.** Nếu object tương thích SRP Batcher, Unity ưu tiên SRP Batcher và bỏ qua GPU Instancing. Muốn GPU Instancing → `Graphics.DrawMeshInstanced` hoặc gỡ tương thích SRP Batcher. Chi tiết: [Render Pipeline (URP)](../rendering/render-pipeline-urp.md). (Nguồn: [SRP Batcher in URP 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/SRPBatcher-landing.html).)
 
-## :material-content-cut: Shader stripping (giảm build)
+## :material-content-cut: Shader stripping & Shader Build Settings (giảm build)
 
-- **Mới ở 6.3 — Shader Build Settings** trong cửa sổ Graphics: giới hạn shader variants theo keyword, loại shader code cho keyword cụ thể trong build profile → **giảm build size & build time**. (Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
-- Shader variants nhiều = build phình to + lâu. Strip những gì không dùng.
+Trong cửa sổ Graphics:
 
-!!! warning "Cần verify"
-    Vị trí/tên chính xác của **Shader Build Settings** và các tùy chọn stripping trong Graphics window 6.3 — xác nhận bằng screenshot ở trên.
+- **Shader Build Settings** *(mới ở 6.3)* — **Keyword Declaration Overrides**: giới hạn shader variants theo keyword set → giảm build size & time. *(Đổi rồi **Apply** sẽ trigger shader re-import.)*
+- **Shader Stripping** (default):
+    - **Instancing Variants:** `Strip Unused`
+    - **Lightmap Modes** / **Fog Modes:** `Automatic`
+    - **Batch Renderer Group Variants:** `Strip if Entities Graphics Package is not installed`
+- Cuối cửa sổ có bộ đếm **"Currently tracked: N shaders, M variants"** để theo dõi.
+
+> Shader variants nhiều = build phình to + compile lâu → strip mạnh tay những gì không dùng.
 
 ## :material-link-variant: Nguồn
 

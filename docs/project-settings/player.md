@@ -12,23 +12,25 @@
 
 `Edit > Project Settings > Player` — phần quan trọng nhất cho tối ưu nằm trong **Other Settings**.
 
+## :material-cog: Other Settings — default
+
+⚠️ Nhiều field **khác default theo platform tab** (Configuration / Optimization). Default thật từ template `6000.3.10f1`:
+
+| Field | PC (Standalone) | Android | Ghi chú |
+|---|---|---|---|
+| **Color Space** | Linear | Linear | *(shared)* URP cần Linear |
+| **Scripting Backend** | **Mono** | **IL2CPP** | Mono dev nhanh; **IL2CPP cho release** (AOT, nhanh, khó decompile). iOS luôn IL2CPP |
+| **Api Compatibility Level** | .NET Standard 2.1 | .NET Standard 2.1 | Nhẹ; `.NET Framework` chỉ khi thư viện cần |
+| **IL2CPP Code Generation** | Optimize for runtime speed | Optimize for runtime speed | Đổi *Optimize for build size* nếu cần build nhỏ/nhanh hơn |
+| **Managed Stripping Level** | **Disabled** | **Minimal** | Tăng → build nhỏ hơn; cẩn thận **reflection** (giữ qua `link.xml`) |
+| **Use incremental GC** | On | On | Chia nhỏ GC → đỡ giật |
+| **Active Input Handling** | Input System (New) | Input System (New) | Template dùng Input System package |
+| **Target Architectures** | — | **ARM64** (ARMv7 off) | Bỏ ARMv7 nếu không cần máy quá cũ |
+| **Strip Engine Code** | — | On | Cắt module engine không dùng → nhẹ APK |
+| **GPU Skinning** | On | On | Đẩy skinning lên GPU |
+
 !!! note "📸 Screenshot cần chụp"
-    `Project Settings > Player > Other Settings` — cho thấy **Color Space, Scripting Backend, Api Compatibility Level, Managed Stripping Level**. → `docs/assets/screenshots/player-other-settings.png`
-
-## :material-cog: Other Settings — default & ý nghĩa
-
-| Field | Default (template) | Ý nghĩa / khuyến nghị |
-|---|---|---|
-| **Color Space** | **Linear** | URP cần Linear để ánh sáng/khử gamma đúng. Đừng đổi Gamma. |
-| **Scripting Backend** | Mono (editor) / theo platform | Build release & mobile → **IL2CPP** (AOT, nhanh, khó decompile). iOS luôn IL2CPP. |
-| **Api Compatibility Level** | **.NET Standard 2.1** | Nhẹ, đủ cho đa số. `.NET Framework` chỉ khi thư viện yêu cầu (build nặng hơn). |
-| **IL2CPP Code Generation** | Faster runtime | "Faster (smaller) builds" nếu muốn build nhanh/nhỏ hơn, đổi lại runtime chậm hơn chút. |
-| **Managed Stripping Level** | theo platform | Tăng (High) để cắt code không dùng → build nhỏ. Cẩn thận code dùng **reflection** (giữ qua `link.xml`). |
-| **GPU Skinning** | On | Đẩy skinning lên GPU, nhẹ CPU. |
-| Company / Product Name | DefaultCompany / My project | Đổi cho đúng dự án. |
-
-!!! warning "Cần verify"
-    Nhãn chính xác của **Api Compatibility Level** và **default Scripting Backend theo từng platform** trong 6.3 — xác nhận bằng screenshot ở trên. Nhiều field này khác nhau **theo platform tab** (Windows / Android / iOS).
+    `Player > Other Settings` cho **2 platform** (khác nhau): tab **PC/Standalone** → `player-other-pc.png`; tab **Android** → `player-other-android.png`.
 
 ## :material-flash: Tối ưu theo platform
 
