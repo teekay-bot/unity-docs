@@ -165,3 +165,76 @@
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Layout — tận dụng bề ngang màn hình (rộng hơn default ~61rem)
+   ============================================================ */
+.md-grid {
+  max-width: 76rem;
+}
+
+/* ============================================================
+   Typography hierarchy — tách bạch title / header / content
+   ============================================================ */
+.md-typeset {
+  line-height: 1.72;
+  font-size: 0.85rem;
+}
+.md-typeset p {
+  margin: 0.85em 0;
+}
+
+.md-typeset h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 1.1rem;
+}
+
+/* h2 = mốc section: thanh accent lime bên trái + cỡ lớn + nhiều khoảng trên */
+.md-typeset h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 2.6em 0 1em;
+  padding: 0.1em 0 0.1em 0.7rem;
+  border-left: 4px solid var(--u-lime);
+}
+
+/* h3 = sub-section: chữ tông accent, không thanh */
+.md-typeset h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 2em 0 0.6em;
+}
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #d7ff7a;
+}
+[data-md-color-scheme="default"] .md-typeset h3 {
+  color: #2b7a9b;
+}
+
+.md-typeset h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5em 0 0.5em;
+}
+
+.md-typeset hr {
+  margin: 2.4em 0;
+}
+
+/* Blockquote intro/ghi chú = boxed nhẹ, đỡ khô */
+.md-typeset blockquote {
+  border-left: 4px solid var(--u-lime);
+  background: rgba(198, 255, 52, 0.05);
+  border-radius: 0 8px 8px 0;
+  padding: 0.5em 1em;
+}
+[data-md-color-scheme="default"] .md-typeset blockquote {
+  border-left-color: #2b7a9b;
+  background: rgba(43, 122, 155, 0.06);
+}
