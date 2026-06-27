@@ -12,8 +12,10 @@
 
 **Menu path:** `Edit > Project Settings > Quality` — cách chắc chắn nhất. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field, và đặt level active cho từng platform.
 
-!!! note "📸 Screenshot — chờ lưu file"
-    Cửa sổ `Project Settings > Quality` (ví dụ project **2D**: 6 level Very Low→Ultra, Render Pipeline Asset `UniversalRP`). Để ý dòng *"A Scriptable Render Pipeline is in use, some settings will not be used and are hidden"* — đúng điểm URP ẩn nhiều field. **Lưu ảnh vào `docs/assets/screenshots/quality-window-2d.png`** rồi tôi chèn + bật zoom.
+![Cửa sổ Project Settings > Quality của project 3D — 2 level Mobile/PC, level PC đang active dùng PC_RPAsset.](../assets/screenshots/quality-window.png){ width="440" }
+
+!!! note "Để ý trong ảnh (click để phóng to)"
+    Dòng *"A Scriptable Render Pipeline is in use, some settings will not be used and are hidden"* xác nhận: dưới URP, nhiều field (Anti Aliasing, Pixel Light Count, Shadows…) bị **ẩn** khỏi cửa sổ Quality — cấu hình thật nằm trong **URP Asset**. Ảnh cũng cho thấy field thật tên **LOD Group Bias** / **Maximum LOD Group Level**.
 
 !!! tip "Đổi nhanh Quality level trên toolbar (Unity 6.3)"
     Control này **ẩn mặc định** — bật qua tùy biến main toolbar:

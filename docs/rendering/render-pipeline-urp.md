@@ -46,6 +46,9 @@ URP điều khiển rendering qua **2 asset chính**:
     - **Grading Mode:** HDR / LDR. **LUT Size:** default **32**.
     - **Screen Space Lens Flare**, **Data Driven Lens Flare**, **Fast sRGB/Linear Conversions**.
 
+!!! warning "Conflict: SRP Batcher ⚔️ GPU Instancing"
+    **GPU Instancing không dùng chung được với SRP Batcher.** Nếu một GameObject tương thích SRP Batcher, Unity **ưu tiên SRP Batcher** và bỏ qua GPU Instancing cho object đó. Muốn dùng GPU Instancing thì phải gọi `Graphics.RenderMeshInstanced` / `Graphics.DrawMeshInstanced`, hoặc **gỡ tương thích SRP Batcher** cho shader/material. (Nguồn: [SRP Batcher in URP — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/SRPBatcher-landing.html).)
+
 ## Universal Renderer (3D) — Rendering Path
 
 Field **Rendering Path**: **Forward**, **Forward+**, **Deferred**, **Deferred+**.
