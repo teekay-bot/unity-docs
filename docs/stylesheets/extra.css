@@ -262,3 +262,109 @@
   text-align: center;
   margin: 1.4em 0;
 }
+
+/* ============================================================
+   Tables — bo góc, header nổi, zebra, hover row
+   ============================================================ */
+.md-typeset table:not([class]) {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.78rem;
+}
+.md-typeset table:not([class]) th {
+  font-weight: 700;
+}
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.62em 0.9em;
+  border: none;
+}
+.md-typeset table:not([class]) td:first-child {
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tbody tr {
+  transition: background 0.15s ease;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: rgba(198, 255, 52, 0.1);
+  border-bottom: 2px solid rgba(198, 255, 52, 0.3);
+}
+[data-md-color-scheme="slate"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.022);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(198, 255, 52, 0.07);
+}
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: rgba(43, 122, 155, 0.12);
+  border-bottom: 2px solid rgba(43, 122, 155, 0.3);
+}
+[data-md-color-scheme="default"]
+  .md-typeset
+  table:not([class])
+  tbody
+  tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.025);
+}
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(43, 122, 155, 0.08);
+}
+
+/* ============================================================
+   Lists — marker tông accent, spacing thoáng
+   ============================================================ */
+.md-typeset ul li::marker {
+  color: var(--u-lime);
+}
+.md-typeset ol li::marker {
+  color: var(--u-lime);
+  font-weight: 700;
+}
+[data-md-color-scheme="default"] .md-typeset ul li::marker,
+[data-md-color-scheme="default"] .md-typeset ol li::marker {
+  color: #2b7a9b;
+}
+.md-typeset li {
+  margin-bottom: 0.35em;
+}
+
+/* ============================================================
+   Nav trái + TOC phải — "you are here" rõ, sửa active về lime
+   ============================================================ */
+.md-nav__title {
+  font-weight: 700;
+}
+/* TOC phải: thanh accent trái + bold khi active */
+.md-nav--secondary .md-nav__link {
+  border-left: 2px solid transparent;
+  padding-left: 0.6rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.md-nav--secondary .md-nav__link--active {
+  font-weight: 600;
+  border-left-color: var(--u-lime);
+}
+.md-nav--primary .md-nav__item--active > .md-nav__link,
+.md-nav--primary .md-nav__link--active {
+  font-weight: 600;
+}
+/* màu active theo scheme (sửa lỗi nav trái hiện xanh ở dark) */
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: var(--u-lime);
+}
+[data-md-color-scheme="default"] .md-nav__link--active,
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link,
+[data-md-color-scheme="default"] .md-nav__link:hover {
+  color: #2b7a9b;
+}
+[data-md-color-scheme="default"] .md-nav--secondary .md-nav__link--active {
+  border-left-color: #2b7a9b;
+}
