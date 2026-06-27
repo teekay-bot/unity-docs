@@ -1,23 +1,25 @@
-# Screenshots cần chụp (batch cuối)
+# Screenshots — DONE ✅
 
-Chụp các cửa sổ dưới đây trong Unity 6.3, lưu PNG vào `docs/assets/screenshots/` với đúng tên file. Claude sẽ chèn vào trang + bật zoom.
+Tất cả screenshot đã chụp, lưu vào `docs/assets/screenshots/` và chèn vào trang (có zoom glightbox). Giữ file này làm bản đồ ảnh ↔ trang.
 
-> Quy ước: viết nội dung trước, chỗ nào cần ảnh để placeholder `!!! note "📸 Screenshot cần chụp"` trong trang + ghi vào danh sách này. Xong hết content thì chụp một loạt.
+## Danh sách (tất cả ✅)
 
-## Danh sách
-
-| Trang | File | Cần chụp gì | Trạng thái |
+| Trang | File | Nội dung | Trạng thái |
 |---|---|---|---|
-| project-settings/quality.md | `quality-window.png` | Cửa sổ Quality (Mobile/PC, Render Pipeline Asset, dòng "SRP in use…") | ✅ Done (3D) |
-| project-settings/player.md | `player-other-pc.png` | `Player > Other Settings` tab **PC/Standalone** (Scripting Backend=Mono, Managed Stripping=Disabled) | 🟡 Đã có ảnh, chờ lưu |
-| project-settings/player.md | `player-other-android.png` | `Player > Other Settings` tab **Android** (Scripting Backend=IL2CPP, Stripping=Minimal, ARM64) | 🟡 Đã có ảnh, chờ lưu |
-| project-settings/graphics-render-pipeline.md | `graphics-srp.png` | `Graphics`: Default Render Pipeline + Shader Build Settings + Shader Stripping | 🟡 Đã có ảnh, chờ lưu |
-| rendering/render-pipeline-urp.md | `create-rendering-menu.png` | Menu `Create > Rendering` (URP Asset with Universal/2D Renderer, Post-process Data…) | 🟡 Đã có ảnh, chờ lưu |
-| rendering/lighting.md | `lighting-window.png` | `Window > Rendering > Lighting` — Lightmapping Settings (Lightmapper = GPU) | ⬜ Chờ |
-| rendering/post-processing.md | `volume-bloom.png` | Volume Profile có Bloom — thấy Mode/Filter Kawase / Dual | ⬜ Chờ |
-| assets/textures.md | `texture-import.png` | Inspector texture với hàng tab platform override (Max Size + Format BC7/ASTC) | ⬜ Chờ |
-| assets/sprites-atlases.md | `sprite-atlas.png` | Inspector Sprite Atlas (Objects for Packing + Packing/Texture settings) | ⬜ Chờ |
-| build/index.md | `build-profiles.png` | `File > Build Profiles` — danh sách platform + Scene List | ⬜ Chờ |
-| profiling/tools.md | `profiler-window.png` | `Window > Analysis > Profiler` — CPU Usage Timeline 1 frame (module + GC Alloc) | ⬜ Chờ |
+| project-settings/quality.md | `quality-window.png` | Cửa sổ Quality 3D (Mobile/PC, SRP in use) | ✅ |
+| project-settings/player.md | `player-other-pc-1.png` · `player-other-pc-2.png` | PC: Scripting Backend=Mono / Managed Stripping=Disabled (chia 2 ảnh) | ✅ |
+| project-settings/player.md | `player-other-android-1.png` · `player-other-android-2.png` | Android: IL2CPP / Strip Engine Code + Stripping=Minimal (chia 2 ảnh) | ✅ |
+| project-settings/graphics-render-pipeline.md | `graphics-srp.png` | Default Render Pipeline=PC_RPAsset + Shader Build/Stripping | ✅ |
+| rendering/render-pipeline-urp.md | `create-rendering-menu.png` | Menu Create > Rendering (các asset URP) | ✅ |
+| rendering/lighting.md | `lighting-window.png` | Lighting — Lightmapper = **Progressive GPU** | ✅ |
+| rendering/post-processing.md | `volume-bloom.png` | Bloom override — Filter: Gaussian/Dual/**Kawase** | ✅ |
+| assets/textures.md | `texture-import-3D.png` · `texture-import-2D.png` | Cùng ảnh: Default(3D, DXT5\|BC3) vs Sprite(2D, ETC2) | ✅ |
+| assets/sprites-atlases.md | `sprite-atlas.png` | Inspector Sprite Atlas (Master, Packing, Objects) | ✅ |
+| build/index.md | `build-profiles.png` | File > Build Profiles (Platforms + Scene List) | ✅ |
+| profiling/tools.md | `profiler-window.png` | Profiler — CPU/Rendering/Memory + Timeline | ✅ |
 
-<!-- Thêm dòng mới khi viết trang có placeholder screenshot -->
+## Đính chính rút ra từ screenshot (đã sửa nội dung)
+
+- **Texture format mặc định** KHÔNG phải BC7/ASTC: PC = `DXT5|BC3`, Android = `ETC2 8 bits`. BC7/ASTC là nâng cấp tự chọn. → đã sửa `assets/textures.md`.
+- **Lightmapper** label đúng là **Progressive GPU** (không phải "GPU (OpenCL)"). → đã sửa `rendering/lighting.md`.
+- **Bloom Kawase/Dual** nằm ở field **Filter** (Gaussian/Dual/Kawase) trong override Bloom. → đã sửa `rendering/post-processing.md`.

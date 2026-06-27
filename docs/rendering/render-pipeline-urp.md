@@ -26,8 +26,10 @@ URP điều khiển rendering qua **2 asset chính**:
 !!! tip "Dùng template thì khỏi tạo tay"
     Tạo project bằng template **Universal 2D / Universal 3D** thì các asset trên đã được tạo & gán sẵn (xem [Setup](../setup/index.md)).
 
-!!! note "📸 Screenshot cần chụp"
-    Menu `Create > Rendering` (thấy URP Asset (with Universal/2D Renderer), URP Post-process Data…). → `create-rendering-menu.png`
+![Menu Assets > Create > Rendering — URP Asset (with 2D Renderer), URP Asset (with Universal Renderer), URP 2D Renderer, URP Universal Renderer, URP Post-process Data, Volume Profile…](../assets/screenshots/create-rendering-menu.png){ width="620" }
+
+!!! note "Để ý trong ảnh (click để phóng to)"
+    `Create > Rendering` có các mục URP: **URP Asset (with Universal Renderer)** (3D) và **URP Asset (with 2D Renderer)** — mỗi cái tạo *kèm* renderer tương ứng. Tạo renderer riêng bằng **URP Universal Renderer** / **URP 2D Renderer**. **URP Post-process Data** và **Volume Profile** cũng nằm trong menu này.
 
 ## :material-package-variant-closed: URP Asset — các nhóm setting
 

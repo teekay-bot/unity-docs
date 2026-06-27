@@ -14,15 +14,14 @@
 - **Camera** phải bật **Post Processing** (và Anti-aliasing per-camera) để effect hiển thị.
 - Asset **URP Post-process Data** (tạo qua `Create > Rendering > URP Post-process Data`) gắn với renderer.
 
-!!! note "📸 Screenshot cần chụp"
-    Một **Volume Profile** với Bloom (thấy mục **Mode/Filter: Kawase / Dual**) trong Inspector. → `volume-bloom.png`
+![Inspector Volume Profile — override Bloom, dropdown Filter mở ra: Gaussian / Dual / Kawase (đang chọn Kawase).](../assets/screenshots/volume-bloom.png){ width="520" }
+
+!!! note "Để ý trong ảnh (click để phóng to)"
+    Trong override **Bloom**, field **Filter** là dropdown 3 lựa chọn: **Gaussian** (mặc định cũ), **Dual**, **Kawase**. Có thêm toggle **High Quality Filtering**. Các field khác: *Threshold*, *Intensity*, *Scatter*, *Tint*, *Clamp*, *Lens Dirt*.
 
 ## :material-blur: Bloom — Kawase / Dual filtering (mới 6.3)
 
-URP 6.3 thêm tùy chọn **Kawase** và **Dual filtering** cho Bloom → cải thiện hiệu năng, đặc biệt phần cứng yếu / mobile. (Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
-
-!!! warning "Cần verify"
-    Tên chính xác và vị trí tùy chọn **Kawase / Dual filtering** trong override Bloom (URP 6.3) cần xác nhận bằng screenshot ở trên.
+URP 6.3 thêm hai chế độ **Filter** cho Bloom là **Kawase** và **Dual** (cạnh **Gaussian** cũ) → cải thiện hiệu năng, đặc biệt phần cứng yếu / mobile. Đổi ở field **Filter** trong override Bloom (xem ảnh trên). (Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
 
 ## :material-flash: Tối ưu theo platform
 

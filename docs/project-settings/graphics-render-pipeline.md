@@ -11,8 +11,10 @@
 
 `Edit > Project Settings > Graphics`.
 
-!!! note "📸 Screenshot cần chụp"
-    `Project Settings > Graphics` — phần **Scriptable Render Pipeline Settings** (URP Asset được gán) + **Shader Stripping / Shader Build Settings**. → `docs/assets/screenshots/graphics-srp.png`
+![Project Settings > Graphics — Default Render Pipeline = PC_RPAsset, Shader Build Settings (Keyword Declaration Overrides), Shader Stripping (Lightmap/Fog Modes = Automatic, Instancing Variants = Strip Unused).](../assets/screenshots/graphics-srp.png){ width="640" }
+
+!!! note "Để ý trong ảnh (click để phóng to)"
+    **Default Render Pipeline** = `PC_RPAsset` (URP Asset). Mục **Shader Stripping**: *Lightmap Modes* & *Fog Modes* = **Automatic**, *Instancing Variants* = **Strip Unused**, *Batch Renderer Group Variants* = *Strip if Entities Graphics Package is not installed*. **Shader Build Settings** (mới 6.3) dùng *Keyword Declaration Overrides* (đang trống).
 
 ## :material-palette: Gán URP pipeline
 

@@ -28,12 +28,14 @@
 Trong Inspector texture có hàng tab platform: **Default**, **PC/Standalone**, **Android**, **iOS**… Tick **Override for \<platform\>** để đặt riêng format.
 
 === "PC / Standalone"
-    - Format khuyến nghị: **BC7** (chất lượng cao, RGBA) hoặc **DXT1/DXT5 (BC1/BC3)** khi cần nhẹ.
+    - **Mặc định:** `RGBA Compressed DXT5|BC3` (xem ảnh dưới).
+    - **Khuyến nghị nâng cấp:** **BC7** (chất lượng cao hơn DXT5, cùng cỡ) cho ảnh quan trọng.
     - **BC5** cho normal map (2 kênh, nét).
     - Max Size thoải mái (2048+).
 
 === "Mobile (Android/iOS)"
-    - Format khuyến nghị: **ASTC** (linh hoạt block size — `ASTC 6x6`/`8x8` cân nét/size).
+    - **Mặc định Android:** `RGBA Compressed ETC2 8 bits`.
+    - **Khuyến nghị nâng cấp:** **ASTC** (linh hoạt block size — `ASTC 6x6`/`8x8` cân nét/size) trên thiết bị hiện đại.
     - Block lớn hơn = nén mạnh hơn, nhẹ hơn, kém nét hơn.
     - Hạ **Max Size** (1024/512), bật **Crunch** để giảm size tải về.
 
@@ -46,8 +48,16 @@ Trong Inspector texture có hàng tab platform: **Default**, **PC/Standalone**, 
 - **Bật** cho texture 3D world.
 - **Tắt** cho **sprite 2D / UI** (luôn hiển thị 1:1, mipmap chỉ phí RAM +33% và làm mờ).
 
-!!! note "📸 Screenshot cần chụp"
-    Inspector của một texture với hàng tab **platform override** (thấy Max Size + Format BC7/ASTC). → `texture-import.png`
+Cùng một file ảnh, đổi **Texture Type** là cả Inspector đổi theo. Hai ảnh dưới là cùng 1 crosshair — import dạng **Default (3D)** vs **Sprite (2D)**:
+
+=== "Default (3D)"
+    ![Texture Type = Default; tab PC/Standalone: Max Size 2048, Format RGBA Compressed DXT5|BC3.](screenshots/texture-import-3D.png){ width="460" }
+
+=== "Sprite (2D)"
+    ![Texture Type = Sprite (2D and UI), PPU 100, Generate Mipmap off; tab Android: Format RGBA Compressed ETC2 8 bits.](screenshots/texture-import-2D.png){ width="460" }
+
+!!! note "Để ý trong ảnh (click để phóng to)"
+    Format **mặc định** không phải BC7/ASTC: PC hiện **DXT5|BC3**, Android hiện **ETC2 8 bits** — BC7/ASTC là lựa chọn nâng cấp bạn tự chọn. Bản **Sprite (2D)** tự tắt **Generate Mipmap** và bày các field sprite (Sprite Mode, Pixels Per Unit) — xem [Sprites & Atlases](sprites-atlases.md).
 
 ## :material-flash: Checklist tối ưu
 

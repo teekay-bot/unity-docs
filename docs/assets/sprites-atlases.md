@@ -29,11 +29,13 @@
 - Kéo các sprite / thư mục vào **Objects for Packing**.
 - Khi build/play, Unity đóng gói chúng vào 1 texture → các sprite cùng atlas **batch chung**, giảm draw call & SetPass.
 
-!!! warning "Cần verify"
-    Chi tiết **Sprite Atlas V2** (mặc định ở 6.3?), chế độ **Sprite Packer** trong `Project Settings > Editor`, và nhãn field trong Inspector Atlas nên đối chiếu trực tiếp Editor 6.3.
+![Inspector Sprite Atlas — Type Master, Include in Build, Packing (Allow Rotation/Tight Packing/Padding 4), Texture (sRGB, Filter Bilinear), Objects for Packing.](screenshots/sprite-atlas.png){ width="480" }
 
-!!! note "📸 Screenshot cần chụp"
-    Inspector của một **Sprite Atlas** (Objects for Packing + Packing/Texture settings). → `sprite-atlas.png`
+!!! note "Để ý trong ảnh (click để phóng to)"
+    **Type = Master** (atlas chính; còn loại *Variant*). Mục **Packing**: *Allow Rotation* + *Tight Packing* (gói chặt hơn) + *Padding 4*. Mục **Texture** có *Generate Mip Maps* (tắt cho sprite) và **Show Platform Settings For** để đặt format theo platform. **Objects for Packing** là nơi kéo sprite/thư mục vào.
+
+!!! warning "Cần verify"
+    Chế độ **Sprite Packer** trong `Project Settings > Editor` (bật đóng gói atlas) nên đối chiếu trực tiếp Editor 6.3.
 
 ## :material-flash: Atlas → ít draw call
 

@@ -17,11 +17,10 @@
 - Cột **GC Alloc**: phát hiện cấp phát rác mỗi frame (mục tiêu 0 ở hot path — xem [Caching & GC](../scripting/caching-gc.md)).
 - Kết nối thiết bị: chọn target ở thanh trên (Editor / Play / **thiết bị Android-iOS qua Development Build**).
 
-!!! warning "Cần verify"
-    Tên/đường dẫn module & nút trong Profiler 6.3 (vd vị trí dropdown target, **Deep Profile**) nên đối chiếu trực tiếp Editor khi chụp screenshot.
+![Cửa sổ Profiler — module CPU Usage (Rendering/Scripts/Physics/GarbageCollector…), Rendering (Batches/SetPass/Triangles), Memory (Texture/Mesh/GC Allocated in Frame), Timeline Main/Render Thread.](../assets/screenshots/profiler-window.png){ width="680" }
 
-!!! note "📸 Screenshot cần chụp"
-    `Window > Analysis > Profiler` — CPU Usage Timeline của 1 frame (thấy các module + GC Alloc). → `profiler-window.png`
+!!! note "Để ý trong ảnh (click để phóng to)"
+    Thanh trên: dropdown **Profiler Modules**, target **Play Mode**, nút **Clear on Play / Deep Profile / Call Stacks**, *Target Time = 60 FPS*. Module **CPU Usage** tách theo *Rendering / Scripts / Physics / GarbageCollector / VSync / GI / UI*; **Memory** có *GC Allocated in Frame* (số rác/frame — xem [Caching & GC](../scripting/caching-gc.md)); **Timeline** chia **Main Thread** vs **Render Thread**.
 
 ### Deep Profile
 

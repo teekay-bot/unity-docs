@@ -29,8 +29,18 @@
 | **Strip Engine Code** | — | On | Cắt module engine không dùng → nhẹ APK |
 | **GPU Skinning** | On | On | Đẩy skinning lên GPU |
 
-!!! note "📸 Screenshot cần chụp"
-    `Player > Other Settings` cho **2 platform** (khác nhau): tab **PC/Standalone** → `player-other-pc.png`; tab **Android** → `player-other-android.png`.
+=== "PC / Standalone"
+    ![PC/Standalone — Configuration: Scripting Backend = Mono.](../assets/screenshots/player-other-pc-1.png){ width="520" }
+
+    ![PC/Standalone — Optimization: Managed Stripping Level = Disabled.](../assets/screenshots/player-other-pc-2.png){ width="520" }
+
+=== "Android"
+    ![Android — Configuration: Scripting Backend = IL2CPP.](../assets/screenshots/player-other-android-1.png){ width="520" }
+
+    ![Android — Optimization: Strip Engine Code bật, Managed Stripping Level = Minimal.](../assets/screenshots/player-other-android-2.png){ width="520" }
+
+!!! note "Để ý trong ảnh (click để phóng to)"
+    Khác biệt cốt lõi giữa 2 platform: **PC = Mono + Stripping Disabled** (dễ dev, dư dung lượng) còn **Android = IL2CPP + Strip Engine Code + Stripping Minimal** (bắt buộc để phát hành, giảm size). Backend đổi ở mục **Configuration**, stripping ở mục **Optimization**.
 
 ## :material-flash: Tối ưu theo platform
 

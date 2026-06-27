@@ -34,11 +34,10 @@
 - Chọn platform → **Switch Platform** (lần đầu reimport asset theo platform, hơi lâu).
 - **Build** hoặc **Build And Run**.
 
-!!! warning "Cần verify"
-    Cửa sổ **Build Profiles** mới ở Unity 6 — nhãn nút & bố cục chính xác (vd vị trí "Switch Platform", "Scene List") nên đối chiếu trực tiếp Editor 6.3 khi chụp screenshot.
+![Cửa sổ Build Profiles — danh sách Platforms (Windows Active, Android, iOS, Web…), Scene List, Platform Settings (Architecture Intel 64-bit, Development Build…), nút Build / Build And Run.](../assets/screenshots/build-profiles.png){ width="680" }
 
-!!! note "📸 Screenshot cần chụp"
-    `File > Build Profiles` — cửa sổ với danh sách platform + Scene List. → `build-profiles.png`
+!!! note "Để ý trong ảnh (click để phóng to)"
+    Cột **Platforms** liệt kê mọi nền tảng (Windows đang **Active**). **Scene List** dùng chung (đổi riêng thì *Add Build Profile*). **Platform Settings (Windows):** *Architecture = Intel 64-bit*, *Build and Run on = Local Machine*, checkbox **Development Build / Autoconnect Profiler / Deep Profiling / Script Debugging**, *Compression Method = Default*. Hai tab trên-phải: **Player Settings** & **Asset Import Overrides**.
 
 ## :material-bug-check: Development Build
 
