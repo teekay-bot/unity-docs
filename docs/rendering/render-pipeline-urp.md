@@ -2,12 +2,18 @@
 
 > **Target: Unity 6.3 LTS (6000.3)** · URP 17.3.0. Project này dùng **URP cho cả 2D lẫn 3D** — không dùng Built-in. Field tham chiếu [URP Asset reference 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/universalrp-asset.html).
 
+!!! abstract "TL;DR"
+    - URP = **URP Asset** (HDR, MSAA, Render Scale, Shadows…) + **Renderer** (3D: Universal Renderer · 2D: 2D Renderer).
+    - Gán ở `Project Settings > Graphics` + theo từng Quality level.
+    - **3D Rendering Path:** Forward+ (mặc định phổ biến) / Deferred (nhiều light). **Mobile** → Render Scale ↓, MSAA ↓, shadow ↓.
+    - ⚔️ **SRP Batcher không dùng chung với GPU Instancing.**
+
 URP điều khiển rendering qua **2 asset chính**:
 
 1. **URP Asset** (Universal Render Pipeline Asset) — chất lượng/feature toàn pipeline (HDR, MSAA, Render Scale, Lighting, Shadows…). Có thể có **nhiều URP Asset cho từng Quality level**.
 2. **Renderer** — *cách* vẽ frame. 3D dùng **Universal Renderer** (Forward / Forward+ / Deferred); 2D dùng **2D Renderer**.
 
-## Setup & gán asset
+## :material-cog-outline: Setup & gán asset
 
 - **Gán pipeline mặc định:** `Edit > Project Settings > Graphics` → mục **Scriptable Render Pipeline Settings** → chọn URP Asset.
 - **Gán theo Quality level:** `Edit > Project Settings > Quality` → field **Render Pipeline** của mỗi level (xem [Quality](../project-settings/quality.md)). Cho phép mỗi level (Low/High…) một URP Asset khác nhau.
@@ -16,7 +22,7 @@ URP điều khiển rendering qua **2 asset chính**:
 !!! warning "Cần verify"
     Tên menu `Create > Rendering > …` và bước tạo **2D Renderer** trong 6.3 cần kiểm tra lại trực tiếp trong Editor (Unity hay đổi nhãn menu Create giữa các version). Nếu dùng template **2D (URP)** hoặc **3D (URP)** khi tạo project thì asset đã được tạo & gán sẵn.
 
-## URP Asset — các nhóm setting
+## :material-package-variant-closed: URP Asset — các nhóm setting
 
 === "Rendering"
     - **Depth Texture** — tạo `_CameraDepthTexture` cho mọi camera.
@@ -49,7 +55,7 @@ URP điều khiển rendering qua **2 asset chính**:
 !!! warning "Conflict: SRP Batcher ⚔️ GPU Instancing"
     **GPU Instancing không dùng chung được với SRP Batcher.** Nếu một GameObject tương thích SRP Batcher, Unity **ưu tiên SRP Batcher** và bỏ qua GPU Instancing cho object đó. Muốn dùng GPU Instancing thì phải gọi `Graphics.RenderMeshInstanced` / `Graphics.DrawMeshInstanced`, hoặc **gỡ tương thích SRP Batcher** cho shader/material. (Nguồn: [SRP Batcher in URP — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/SRPBatcher-landing.html).)
 
-## Universal Renderer (3D) — Rendering Path
+## :material-cube-outline: Universal Renderer (3D) — Rendering Path
 
 Field **Rendering Path**: **Forward**, **Forward+**, **Deferred**, **Deferred+**.
 
@@ -64,7 +70,7 @@ Field **Rendering Path**: **Forward**, **Forward+**, **Deferred**, **Deferred+**
 
 Các setting Universal Renderer khác: **Depth Priming Mode** (Disabled/Auto/Forced), **Native RenderPass**, **Transparent Receive Shadows**, **Renderer Features** (list), **Filtering** layer masks.
 
-## 2D vs 3D
+## :material-layers-triple-outline: 2D vs 3D
 
 === "3D — Universal Renderer"
     Dùng **Universal Renderer** với Rendering Path ở trên. Lighting/Shadows theo URP Asset.
@@ -83,7 +89,7 @@ Các setting Universal Renderer khác: **Depth Priming Mode** (Disabled/Auto/For
 
     > Template 2D ship sẵn package 2D: 2D Animation, Aseprite, PSD Importer, SpriteShape, Tilemap (+Extras), Sprite, Tooling. Xem [Sprites & Atlases](../assets/sprites-atlases.md).
 
-## Recommendation theo platform
+## :material-tune-variant: Recommendation theo platform
 
 > Đây là **hướng tối ưu chung** (chưa phải default 6.3) — đo bằng [Profiler](../profiling/tools.md) cho game thật.
 
@@ -112,7 +118,7 @@ Các setting Universal Renderer khác: **Depth Priming Mode** (Disabled/Auto/For
 
     **Why (Mobile):** GPU tile-based giới hạn bởi **bandwidth, fillrate, thermal & pin** → cắt Render Scale, MSAA, HDR, opaque/depth texture, soft shadow.
 
-## Nguồn (official)
+## :material-link-variant: Nguồn (official)
 
 - [URP Asset reference — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/universalrp-asset.html)
 - [Universal Renderer asset reference — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/urp-universal-renderer.html)

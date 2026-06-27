@@ -2,7 +2,10 @@
 
 > Các **package / asset bên ngoài** mà project dùng, kèm link tới repo / Asset Store / docs. Cập nhật danh sách này mỗi khi thêm dependency mới để dễ setup lại project.
 
-## Cách import
+!!! abstract "TL;DR"
+    Hub dependency ngoài + link (repo / Asset Store / docs). Đã seed: **UniTask**. Import qua Git URL / OpenUPM / Asset Store. Thêm package mới → cập nhật trang này (pin theo tag để reproducible).
+
+## :material-download: Cách import
 
 === "Git URL (UPM)"
     `Window > Package Manager > + > Add package from git URL…` rồi dán URL `.git`.
@@ -13,7 +16,7 @@
 === "Asset Store / .unitypackage"
     `Window > Package Manager > My Assets` để import, hoặc kéo file `.unitypackage` vào project.
 
-## Danh sách
+## :material-package-variant: Danh sách
 
 <div class="grid cards" markdown>
 
@@ -40,7 +43,7 @@
 
 </div>
 
-## Bảng tham chiếu nhanh
+## :material-table: Bảng tham chiếu nhanh
 
 | Package / Asset | Loại | Link | Ghi chú |
 |---|---|---|---|

@@ -2,7 +2,12 @@
 
 > **Target: Unity 6.3 LTS (6000.3)** · URP only. Mục này giúp cấu hình project đúng ngay từ đầu, tránh phải sửa lại sau.
 
-## Trước khi tạo project
+!!! abstract "TL;DR"
+    - Cài **Unity 6.3 LTS (6000.3.x)** qua Unity Hub.
+    - Tạo project bằng template **Universal 2D** hoặc **Universal 3D** (URP + Linear color space sẵn) — tránh template HDRP / Built-in.
+    - Xong → chạy [checklist 2D](new-2d-project.md) / [checklist 3D](new-3d-project.md).
+
+## :material-clipboard-check-outline: Trước khi tạo project
 
 ### Editor
 
@@ -20,7 +25,7 @@ Cài **Unity 6.3 LTS (6000.3.x)** qua Unity Hub. Đây là LTS, support tới 12
 
 > Nguồn: [System requirements — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/system-requirements.html).
 
-## Tạo project (Unity Hub → template URP)
+## :material-plus-box-outline: Tạo project (Unity Hub → template URP)
 
 Trong Unity Hub → **New project** (Editor version `6000.3.x`) → chọn template URP:
 
@@ -31,16 +36,16 @@ Trong Unity Hub → **New project** (Editor version `6000.3.x`) → chọn templ
     Trong Hub 6.3 còn có **High Definition 3D** (HDRP), **3D (Built-In Render Pipeline)**, **2D (Built-In Render Pipeline)** — **đừng chọn** mấy cái này. Project chỉ dùng URP → chọn đúng **Universal 2D / Universal 3D**.
 
 !!! note "Vì sao dùng template URP"
-    Template URP đã **tạo & gán sẵn URP Asset + Renderer** (kèm sẵn **2 quality level Mobile/PC** + URP Asset riêng cho từng level) và set **Linear color space** — đỡ cấu hình tay. Lỡ tạo project Built-in thì phải [migrate sang URP](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/upgrading-from-birp.html).
+    Template URP đã **tạo & gán sẵn URP Asset + Renderer** và set **Linear color space** — đỡ cấu hình tay. Quality level khác nhau theo template: **3D → Mobile/PC** (2 URP Asset riêng), **2D → Very Low→Ultra** (1 URP Asset chung) — xem [Quality](../project-settings/quality.md). Lỡ tạo project Built-in thì phải [migrate sang URP](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/upgrading-from-birp.html).
 
-## Sau khi tạo — chạy checklist
+## :material-format-list-numbered: Sau khi tạo — chạy checklist
 
 Mở checklist tương ứng và làm theo thứ tự:
 
 - 📋 **[New 2D Project — Checklist](new-2d-project.md)**
 - 📋 **[New 3D Project — Checklist](new-3d-project.md)**
 
-## Nguồn (official)
+## :material-link-variant: Nguồn (official)
 
 - [System requirements — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/system-requirements.html)
 - [Creating a URP project — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/creating-a-urp-project.html)

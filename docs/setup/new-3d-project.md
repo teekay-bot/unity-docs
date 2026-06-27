@@ -2,6 +2,9 @@
 
 > **Target: Unity 6.3 LTS (6000.3)** · URP only. Checklist settings ngay sau khi tạo project bằng template **Universal 3D**. Làm theo thứ tự; mỗi mục link tới trang chi tiết.
 
+!!! abstract "TL;DR"
+    Sau khi tạo project **Universal 3D**: **1)** set platform (Build Profiles) → **2)** URP 3D (chọn Rendering Path) → **3)** Quality → **4)** Player (Linear) → **5)** Lighting (GPU lightmapper) → **6)** Physics 3D → **7)** Assets (meshes, textures) → **8)** Input System + `.gitignore`.
+
 !!! note "Giả định"
     Bạn đã tạo project bằng template **Universal 3D** (URP + Linear color space đã set sẵn). Nếu chưa, xem [Setup overview](index.md).
 
