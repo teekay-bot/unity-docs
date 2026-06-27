@@ -8,7 +8,7 @@
 
 Cài **Unity 6.3 LTS (6000.3.x)** qua Unity Hub. Đây là LTS, support tới 12/2027.
 
-### System requirements (verified 6.3)
+### System requirements
 
 | OS | Yêu cầu tối thiểu |
 |---|---|
@@ -22,7 +22,7 @@ Cài **Unity 6.3 LTS (6000.3.x)** qua Unity Hub. Đây là LTS, support tới 12
 
 ## Tạo project (Unity Hub → template URP)
 
-Trong Unity Hub → **New project** (Editor version `6000.3.x`) → chọn template URP (verified trong Hub 6.3):
+Trong Unity Hub → **New project** (Editor version `6000.3.x`) → chọn template URP:
 
 - **Universal 2D** — *"empty project configured for 2D apps, dùng URP pre-configured với 2D Renderer"* → [checklist 2D](new-2d-project.md)
 - **Universal 3D** — *"URP blank template, kèm settings & assets để bắt đầu với URP"* → [checklist 3D](new-3d-project.md)

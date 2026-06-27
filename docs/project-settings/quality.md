@@ -1,17 +1,20 @@
 # Quality Settings
 
-> **Target: Unity 6.3 LTS (6000.3)** · URP only. Default value trên trang này **verified trực tiếp từ template Universal 3D** (`6000.3.10f1`, file `ProjectSettings/QualitySettings.asset` + `Assets/Settings/*_RPAsset.asset`). Field/menu path verify với [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html).
+> **Target: Unity 6.3 LTS (6000.3)** · URP only. Default value trên trang này lấy từ template **Universal 3D** (`6000.3.10f1`). Field/menu path theo [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html).
 
 ## Mở ở đâu
 
-**Menu path:** `Edit > Project Settings > Quality`
+**Menu path:** `Edit > Project Settings > Quality`. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field của nó.
 
-!!! info "Mới ở Unity 6.3"
-    Đổi nhanh Quality level ngay trên **Editor toolbar**, không cần mở Project Settings. (Nguồn: [What's New in Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
+!!! info "Mới ở Unity 6.3 — đổi Quality level trên toolbar"
+    Unity 6.3 cho đổi nhanh Quality level **ngay trên main Editor toolbar** (thanh trên cùng của Editor), không cần mở Project Settings: bấm vào ô chọn Quality level trên toolbar → chọn level muốn dùng. Tham khảo [Toolbar reference](https://docs.unity3d.com/6000.3/Documentation/Manual/Toolbar-reference.html) · [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).
+
+!!! warning "Cần verify"
+    Vị trí chính xác của ô Quality trên toolbar 6.3 — xác nhận trực tiếp trong Editor (trang Toolbar reference tạm không truy cập được khi soạn).
 
 ## Quality levels: template 2D vs 3D KHÁC nhau
 
-Verified từ project thật — 2 template tạo **bộ quality level khác nhau**:
+2 template tạo **bộ quality level khác nhau**:
 
 === "Universal 3D"
     **2 level: `Mobile` và `PC`**, mỗi level trỏ một URP Asset riêng qua field **Render Pipeline**:
@@ -27,14 +30,14 @@ Verified từ project thật — 2 template tạo **bộ quality level khác nha
     **6 level: `Very Low → Low → Medium → High → Very High → Ultra`** — tất cả trỏ **cùng một** URP Asset (`UniversalRP.asset`), không loại platform. Current mặc định: **Very Low**.
 
 !!! note "Bảng default bên dưới = template 3D"
-    Các bảng default ở dưới verify từ **template Universal 3D (Mobile/PC)**. Template **2D** dùng 6 level Very Low→Ultra chung 1 URP Asset — field cùng cấu trúc, tự chỉnh; nguyên tắc tối ưu PC vs Mobile vẫn áp dụng. Riêng 2D ít phụ thuộc shadow/cascade hơn (xem [2D Renderer](../rendering/render-pipeline-urp.md)).
+    Các bảng default ở dưới lấy từ **template Universal 3D (Mobile/PC)**. Template **2D** dùng 6 level Very Low→Ultra chung 1 URP Asset — field cùng cấu trúc, tự chỉnh; nguyên tắc tối ưu PC vs Mobile vẫn áp dụng. Riêng 2D ít phụ thuộc shadow/cascade hơn (xem [2D Renderer](../rendering/render-pipeline-urp.md)).
 
 !!! note "URP điều khiển phần lớn rendering"
     Trong cửa sổ Quality, các field **Anti Aliasing (MSAA), Shadows, Soft Particles, Pixel Light Count** thực tế bị URP "vô hiệu" — cấu hình thật nằm trong **URP Asset** (xem bảng URP Asset bên dưới và [Render Pipeline (URP)](../rendering/render-pipeline-urp.md)). Đó là lý do `antiAliasing` = **0 (Disabled)** ở cả 2 level trong template.
 
-## Default value — Quality window (verified)
+## Default value — Quality window
 
-Các field **còn thực sự tác dụng dưới URP** (verified từ template):
+Các field **còn thực sự tác dụng dưới URP**:
 
 | Field | Mobile | PC | Ghi chú |
 |---|---|---|---|
@@ -52,9 +55,9 @@ Các field **còn thực sự tác dụng dưới URP** (verified từ template)
 | Realtime GI CPU Usage | 100 (Unlimited) | 100 (Unlimited) | |
 | Anti Aliasing (MSAA) | Disabled (0)\* | Disabled (0)\* | \*thực tế dùng URP Asset |
 
-## Default value — URP Asset (verified)
+## Default value — URP Asset
 
-Đây mới là nơi quyết định rendering. Verified từ `Mobile_RPAsset` / `PC_RPAsset`:
+Đây mới là nơi quyết định rendering (`Mobile_RPAsset` / `PC_RPAsset`):
 
 | URP Asset field | Mobile_RPAsset | PC_RPAsset |
 |---|---|---|
@@ -117,7 +120,7 @@ Các field **còn thực sự tác dụng dưới URP** (verified từ template)
 
 ## Nguồn
 
-- **Verified từ project thật:** template **Universal 3D** `6000.3.10f1` — `ProjectSettings/QualitySettings.asset`, `Assets/Settings/PC_RPAsset.asset`, `Assets/Settings/Mobile_RPAsset.asset`.
+- **Nguồn dữ liệu:** template **Universal 3D** `6000.3.10f1` — `ProjectSettings/QualitySettings.asset`, `Assets/Settings/PC_RPAsset.asset`, `Assets/Settings/Mobile_RPAsset.asset`.
 - [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html)
 - [URP Asset reference — Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/universalrp-asset.html)
 - [What's New in Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html)

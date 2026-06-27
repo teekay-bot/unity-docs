@@ -9,7 +9,7 @@
 
 Đặt platform **sớm** để import setting đúng từ đầu.
 
-`File > Build Profiles` (Ctrl+Shift+B) → chọn platform → **Switch Platform**. *(Verified: Unity 6.3 đổi "Build Settings" cũ thành **Build Profiles**.)*
+`File > Build Profiles` (Ctrl+Shift+B) → chọn platform → **Switch Platform**. *(Unity 6.3 đổi "Build Settings" cũ thành **Build Profiles**.)*
 
 === "PC"
     Target **Windows / Mac / Linux** (Standalone). Xem [PC Build](../build/pc-build.md).

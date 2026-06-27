@@ -9,7 +9,7 @@
 
 Đặt platform **sớm** để mọi import setting (texture, audio) đúng ngay từ đầu.
 
-`File > Build Profiles` (Ctrl+Shift+B) → chọn platform → **Switch Platform**. *(Verified: Unity 6.3 đổi "Build Settings" cũ thành **Build Profiles**.)*
+`File > Build Profiles` (Ctrl+Shift+B) → chọn platform → **Switch Platform**. *(Unity 6.3 đổi "Build Settings" cũ thành **Build Profiles**.)*
 
 === "PC"
     Target **Windows / Mac / Linux** (Standalone).
@@ -33,7 +33,7 @@
 
 ## 5. Physics 2D
 
-`Edit > Project Settings > Physics 2D`. Default verified từ template 2D (`6000.3.10f1`):
+`Edit > Project Settings > Physics 2D`. Default từ template 2D (`6000.3.10f1`):
 
 | Field | Default | Ghi chú |
 |---|---|---|

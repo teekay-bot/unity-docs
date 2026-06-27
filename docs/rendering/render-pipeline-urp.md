@@ -1,6 +1,6 @@
 # Render Pipeline (URP)
 
-> **Target: Unity 6.3 LTS (6000.3)** · URP 17.x. Project này dùng **URP cho cả 2D lẫn 3D** — không dùng Built-in. Mọi field đã verify với [URP Asset reference 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/universalrp-asset.html).
+> **Target: Unity 6.3 LTS (6000.3)** · URP 17.3.0. Project này dùng **URP cho cả 2D lẫn 3D** — không dùng Built-in. Field tham chiếu [URP Asset reference 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/universalrp-asset.html).
 
 URP điều khiển rendering qua **2 asset chính**:
 
@@ -16,7 +16,7 @@ URP điều khiển rendering qua **2 asset chính**:
 !!! warning "Cần verify"
     Tên menu `Create > Rendering > …` và bước tạo **2D Renderer** trong 6.3 cần kiểm tra lại trực tiếp trong Editor (Unity hay đổi nhãn menu Create giữa các version). Nếu dùng template **2D (URP)** hoặc **3D (URP)** khi tạo project thì asset đã được tạo & gán sẵn.
 
-## URP Asset — các nhóm setting (verified 6.3)
+## URP Asset — các nhóm setting
 
 === "Rendering"
     - **Depth Texture** — tạo `_CameraDepthTexture` cho mọi camera.
@@ -48,7 +48,7 @@ URP điều khiển rendering qua **2 asset chính**:
 
 ## Universal Renderer (3D) — Rendering Path
 
-Field **Rendering Path** (verified 6.3): **Forward**, **Forward+**, **Deferred**, **Deferred+**.
+Field **Rendering Path**: **Forward**, **Forward+**, **Deferred**, **Deferred+**.
 
 | Path | Ý tưởng | Ghi chú |
 |---|---|---|
@@ -67,7 +67,7 @@ Các setting Universal Renderer khác: **Depth Priming Mode** (Disabled/Auto/For
     Dùng **Universal Renderer** với Rendering Path ở trên. Lighting/Shadows theo URP Asset.
 
 === "2D — 2D Renderer"
-    Template **Universal 2D** dùng **2D Renderer** (asset `Renderer2D`) + hệ thống **2D Lights** (không dùng rendering path 3D). Khác template 3D: 2D chỉ có **1 URP Asset** (`UniversalRP.asset`) dùng chung cho **6 quality level** (Very Low→Ultra). Verified từ `Assets/Settings/Renderer2D.asset`:
+    Template **Universal 2D** dùng **2D Renderer** (asset `Renderer2D`) + hệ thống **2D Lights** (không dùng rendering path 3D). Khác template 3D: 2D chỉ có **1 URP Asset** (`UniversalRP.asset`) dùng chung cho **6 quality level** (Very Low→Ultra). Field trong `Renderer2D` (template 2D):
 
     | Field | Default (template 2D) | Ý nghĩa |
     |---|---|---|

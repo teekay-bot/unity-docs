@@ -32,7 +32,7 @@ Giữ **general** — không đi sâu vào thể loại game cụ thể.
 | Bảng *setting → default → recommend* | Giá trị mặc định và khuyến nghị, kèm lý do |
 
 !!! note "Nguyên tắc nội dung"
-    Mọi menu path / field / default được verify với [Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/) và [URP docs](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/urp-reference-landing.html). Vì project **chỉ dùng URP**, docs bỏ qua hoàn toàn Built-in Render Pipeline.
+    Menu path / field / default đối chiếu với [Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/) và [URP docs](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/urp-reference-landing.html), hoặc lấy trực tiếp từ project template thật. Vì project **chỉ dùng URP**, docs bỏ qua hoàn toàn Built-in Render Pipeline.
 
 ## Bắt đầu từ đâu
 
