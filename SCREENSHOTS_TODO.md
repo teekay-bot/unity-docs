@@ -15,5 +15,7 @@ Chụp các cửa sổ dưới đây trong Unity 6.3, lưu PNG vào `docs/assets
 | rendering/render-pipeline-urp.md | `create-rendering-menu.png` | Menu `Create > Rendering` (URP Asset with Universal/2D Renderer, Post-process Data…) | 🟡 Đã có ảnh, chờ lưu |
 | rendering/lighting.md | `lighting-window.png` | `Window > Rendering > Lighting` — Lightmapping Settings (Lightmapper = GPU) | ⬜ Chờ |
 | rendering/post-processing.md | `volume-bloom.png` | Volume Profile có Bloom — thấy Mode/Filter Kawase / Dual | ⬜ Chờ |
+| assets/textures.md | `texture-import.png` | Inspector texture với hàng tab platform override (Max Size + Format BC7/ASTC) | ⬜ Chờ |
+| assets/sprites-atlases.md | `sprite-atlas.png` | Inspector Sprite Atlas (Objects for Packing + Packing/Texture settings) | ⬜ Chờ |
 
 <!-- Thêm dòng mới khi viết trang có placeholder screenshot -->
