@@ -1,10 +1,27 @@
+---
+tags:
+  - 2d
+  - 3d
+  - mobile
+  - pc
+---
+
 # Quality Settings
 
 > **Target: Unity 6.3 LTS (6000.3)** · URP only. Default value trên trang này lấy từ template **Universal 3D** (`6000.3.10f1`). Field/menu path theo [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html).
 
-## Mở ở đâu
+!!! abstract "TL;DR"
+    - **Menu:** `Edit > Project Settings > Quality`.
+    - Template **3D** → 2 level **Mobile / PC** (2 URP Asset khác nhau); template **2D** → 6 level **Very Low→Ultra** (1 URP Asset chung).
+    - Phần lớn rendering (MSAA, Shadows, Soft Particles) **nằm ở URP Asset**, không phải cửa sổ Quality.
+    - Khác biệt Mobile vs PC chủ yếu: **Render Scale 0.8 vs 1.0**, **Shadow Cascades 1 vs 4**, **Soft Shadows off vs on**.
+
+## :material-tune: Mở ở đâu
 
 **Menu path:** `Edit > Project Settings > Quality` — cách chắc chắn nhất. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field, và đặt level active cho từng platform.
+
+!!! note "📸 Screenshot sẽ chèn ở đây"
+    Ảnh cửa sổ `Project Settings > Quality` (thấy 2 level **Mobile/PC** + field **Render Pipeline**). *Chờ bạn chụp.*
 
 !!! tip "Đổi nhanh Quality level trên toolbar (Unity 6.3)"
     Control này **ẩn mặc định** — bật qua tùy biến main toolbar:
@@ -14,7 +31,7 @@
 
     Sau đó ô **Quality** xuất hiện trên main toolbar — bấm để đổi level, không cần mở Project Settings. (Main toolbar = hàng có nút Play/Pause; *không phải* menu bar File/Edit.) Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).
 
-## Quality levels: template 2D vs 3D KHÁC nhau
+## :material-layers-triple-outline: Quality levels: template 2D vs 3D KHÁC nhau
 
 2 template tạo **bộ quality level khác nhau**:
 
@@ -34,9 +51,17 @@
 !!! note "Bảng default bên dưới = template 3D"
     Các bảng default ở dưới lấy từ **template Universal 3D (Mobile/PC)**. Template **2D** dùng 6 level Very Low→Ultra chung 1 URP Asset — field cùng cấu trúc, tự chỉnh; nguyên tắc tối ưu PC vs Mobile vẫn áp dụng. Riêng 2D ít phụ thuộc shadow/cascade hơn (xem [2D Renderer](../rendering/render-pipeline-urp.md)).
 
-## Chọn mô hình quality level: per-platform hay tiered?
+## :material-source-branch: Chọn mô hình quality level: per-platform hay tiered?
 
 Hai template dùng 2 triết lý khác nhau. Tiêu chí chọn gọn lại ở **một câu hỏi: người chơi có được tự đổi graphics không?**
+
+``` mermaid
+graph TD
+  A{Người chơi tự đổi<br/>graphics?} -->|Không| B[Per-platform<br/>Mobile / PC]
+  A -->|Có| C[Tiered presets<br/>Very Low → Ultra]
+  B --> B1[1 URP Asset riêng<br/>mỗi nền tảng · ít maintain]
+  C --> C1[1 URP Asset + tune<br/>cho mỗi tier · maintain nặng]
+```
 
 | | **Per-platform** (Mobile/PC — như 3D template) | **Tiered presets** (Very Low→Ultra — như 2D template) |
 |---|---|---|
@@ -64,7 +89,7 @@ Hai template dùng 2 triết lý khác nhau. Tiêu chí chọn gọn lại ở *
 !!! note "URP điều khiển phần lớn rendering"
     Trong cửa sổ Quality, các field **Anti Aliasing (MSAA), Shadows, Soft Particles, Pixel Light Count** thực tế bị URP "vô hiệu" — cấu hình thật nằm trong **URP Asset** (xem bảng URP Asset bên dưới và [Render Pipeline (URP)](../rendering/render-pipeline-urp.md)). Đó là lý do `antiAliasing` = **0 (Disabled)** ở cả 2 level trong template.
 
-## Default value — Quality window
+## :material-window-restore: Default value — Quality window
 
 Các field **còn thực sự tác dụng dưới URP**:
 
@@ -84,7 +109,7 @@ Các field **còn thực sự tác dụng dưới URP**:
 | Realtime GI CPU Usage | 100 (Unlimited) | 100 (Unlimited) | |
 | Anti Aliasing (MSAA) | Disabled (0)\* | Disabled (0)\* | \*thực tế dùng URP Asset |
 
-## Default value — URP Asset
+## :material-package-variant-closed: Default value — URP Asset
 
 Đây mới là nơi quyết định rendering (`Mobile_RPAsset` / `PC_RPAsset`):
 
@@ -105,7 +130,7 @@ Các field **còn thực sự tác dụng dưới URP**:
 
 > Field path: `URP Asset > Quality` (HDR, MSAA, Render Scale), `> Lighting` (Main/Additional Lights), `> Shadows` (Max Distance, Cascades, Soft Shadows). Chi tiết: [Render Pipeline (URP)](../rendering/render-pipeline-urp.md).
 
-## Đọc bảng trên thế nào (PC vs Mobile)
+## :material-lightbulb-on-outline: Đọc bảng trên thế nào (PC vs Mobile)
 
 > Unity đã tune sẵn 2 preset hợp lý. Hiểu **tại sao** để biết khi nào nên đổi.
 
@@ -134,7 +159,7 @@ Các field **còn thực sự tác dụng dưới URP**:
 !!! tip "Đòn bẩy tối ưu mobile theo thứ tự"
     1) **Render Scale** ↓ · 2) **Shadow** (cascades/distance/soft off) · 3) **Depth/Opaque Texture** off · 4) **MSAA** off · 5) Additional Lights Per Vertex / giảm Per Object Limit.
 
-## Code: set runtime theo platform
+## :material-code-tags: Code: set runtime theo platform
 
 === "PC"
     ```csharp
@@ -147,7 +172,7 @@ Các field **còn thực sự tác dụng dưới URP**:
     QualitySettings.vSyncCount = 0;          // Don't Sync — control fps bằng targetFrameRate
     ```
 
-## Nguồn
+## :material-link-variant: Nguồn
 
 - **Nguồn dữ liệu:** template **Universal 3D** `6000.3.10f1` — `ProjectSettings/QualitySettings.asset`, `Assets/Settings/PC_RPAsset.asset`, `Assets/Settings/Mobile_RPAsset.asset`.
 - [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html)

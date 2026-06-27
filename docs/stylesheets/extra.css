@@ -238,3 +238,27 @@
   border-left-color: #2b7a9b;
   background: rgba(43, 122, 155, 0.06);
 }
+
+/* ============================================================
+   Tags (mobile/pc/2d/3d) — pill nhỏ, dễ quét
+   ============================================================ */
+.md-typeset .md-tag {
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 0.18em 0.7em;
+  background: rgba(198, 255, 52, 0.12);
+  border: 1px solid rgba(198, 255, 52, 0.3);
+}
+[data-md-color-scheme="default"] .md-typeset .md-tag {
+  background: rgba(43, 122, 155, 0.1);
+  border-color: rgba(43, 122, 155, 0.3);
+}
+
+/* ============================================================
+   Mermaid diagrams — canh giữa, nền nhẹ
+   ============================================================ */
+.md-typeset .mermaid {
+  text-align: center;
+  margin: 1.4em 0;
+}
