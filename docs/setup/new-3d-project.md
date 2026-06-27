@@ -9,15 +9,12 @@
 
 Đặt platform **sớm** để import setting đúng từ đầu.
 
-`File > Build Profiles` (Unity 6) → chọn platform → **Switch Platform**.
+`File > Build Profiles` (Ctrl+Shift+B) → chọn platform → **Switch Platform**. *(Verified: Unity 6.3 đổi "Build Settings" cũ thành **Build Profiles**.)*
 
 === "PC"
     Target **Windows / Mac / Linux** (Standalone). Xem [PC Build](../build/pc-build.md).
 === "Mobile"
     Target **Android** hoặc **iOS**. Xem [Mobile Build](../build/mobile-build.md).
-
-!!! warning "Cần verify"
-    Xác nhận đường dẫn `File > Build Profiles` (tên mới ở Unity 6, thay "Build Settings").
 
 ## 2. Render pipeline (URP 3D)
 

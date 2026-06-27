@@ -9,15 +9,12 @@
 
 Đặt platform **sớm** để mọi import setting (texture, audio) đúng ngay từ đầu.
 
-`File > Build Profiles` (Unity 6) → chọn platform → **Switch Platform**.
+`File > Build Profiles` (Ctrl+Shift+B) → chọn platform → **Switch Platform**. *(Verified: Unity 6.3 đổi "Build Settings" cũ thành **Build Profiles**.)*
 
 === "PC"
     Target **Windows / Mac / Linux** (Standalone).
 === "Mobile"
     Target **Android** hoặc **iOS**. Xem [Mobile Build](../build/mobile-build.md).
-
-!!! warning "Cần verify"
-    Tên cửa sổ trong 6.3 là **Build Profiles** (thay cho "Build Settings" cũ) — xác nhận đường dẫn menu `File > Build Profiles` trong Editor.
 
 ## 2. Render pipeline (URP 2D)
 

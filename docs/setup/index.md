@@ -22,16 +22,16 @@ Cài **Unity 6.3 LTS (6000.3.x)** qua Unity Hub. Đây là LTS, support tới 12
 
 ## Tạo project (Unity Hub → template URP)
 
-Trong Unity Hub → **New project** → chọn template URP:
+Trong Unity Hub → **New project** (Editor version `6000.3.x`) → chọn template URP (verified trong Hub 6.3):
 
-- **2D:** template **Universal 2D** → [checklist 2D](new-2d-project.md)
-- **3D:** template **Universal 3D** → [checklist 3D](new-3d-project.md)
+- **Universal 2D** — *"empty project configured for 2D apps, dùng URP pre-configured với 2D Renderer"* → [checklist 2D](new-2d-project.md)
+- **Universal 3D** — *"URP blank template, kèm settings & assets để bắt đầu với URP"* → [checklist 3D](new-3d-project.md)
 
-!!! warning "Cần verify"
-    Tên template chính xác trong Unity Hub 6.3 (**Universal 2D** / **Universal 3D**) cần xác nhận trực tiếp trong Hub — Unity có đổi nhãn template giữa các version. Quan trọng: chọn template **dùng URP**, tránh template "Built-In Render Pipeline".
+!!! warning "Tránh nhầm template"
+    Trong Hub 6.3 còn có **High Definition 3D** (HDRP), **3D (Built-In Render Pipeline)**, **2D (Built-In Render Pipeline)** — **đừng chọn** mấy cái này. Project chỉ dùng URP → chọn đúng **Universal 2D / Universal 3D**.
 
 !!! note "Vì sao dùng template URP"
-    Template URP đã **tạo & gán sẵn URP Asset + Renderer** và set **Linear color space** — đỡ phải cấu hình tay. Nếu lỡ tạo project Built-in thì phải [migrate sang URP](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/upgrading-from-birp.html) (mất công hơn).
+    Template URP đã **tạo & gán sẵn URP Asset + Renderer** (kèm sẵn **2 quality level Mobile/PC** + URP Asset riêng cho từng level) và set **Linear color space** — đỡ cấu hình tay. Lỡ tạo project Built-in thì phải [migrate sang URP](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/upgrading-from-birp.html).
 
 ## Sau khi tạo — chạy checklist
 
