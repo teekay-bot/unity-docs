@@ -370,3 +370,49 @@
 [data-md-color-scheme="default"] .md-nav--secondary .md-nav__link--active {
   border-left-color: #2b7a9b;
 }
+
+/* ============================================================
+   Nav trái — mỗi mục thành "pill" nổi bật + juice nhẹ
+   ============================================================ */
+.md-nav--primary .md-nav__item {
+  margin: 0.12rem 0;
+}
+.md-nav--primary .md-nav__link {
+  border-radius: 8px;
+  padding: 0.4em 0.65em;
+  transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+.md-nav--primary .md-nav__link:hover {
+  transform: translateX(3px);
+}
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover {
+  background: rgba(198, 255, 52, 0.1);
+}
+[data-md-color-scheme="slate"]
+  .md-nav--primary
+  .md-nav__item--active
+  > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link--active {
+  background: rgba(198, 255, 52, 0.14);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--u-lime);
+}
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__link:hover {
+  background: rgba(43, 122, 155, 0.1);
+}
+[data-md-color-scheme="default"]
+  .md-nav--primary
+  .md-nav__item--active
+  > .md-nav__link,
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__link--active {
+  background: rgba(43, 122, 155, 0.1);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 #2b7a9b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-nav--primary .md-nav__link {
+    transition: background 0.16s ease, color 0.16s ease !important;
+    transform: none !important;
+  }
+}
