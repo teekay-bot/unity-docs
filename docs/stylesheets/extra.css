@@ -69,25 +69,27 @@
 .md-tabs {
   border-bottom: none;
 }
+/* Top nav = pill (giống tag pill) */
 .md-tabs__link {
   position: relative;
-  opacity: 0.78;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  padding: 0.28em 0.85em;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  opacity: 0.85;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
-.md-tabs__link:hover,
+.md-tabs__link:hover {
+  opacity: 1;
+  color: var(--u-lime);
+  background: rgba(198, 255, 52, 0.12);
+  border-color: rgba(198, 255, 52, 0.3);
+}
 .md-tabs__link--active {
   opacity: 1;
   color: var(--u-lime);
-}
-.md-tabs__link--active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: var(--u-lime);
-  border-radius: 2px;
+  font-weight: 600;
+  background: rgba(198, 255, 52, 0.16);
+  border-color: rgba(198, 255, 52, 0.45);
 }
 
 /* search box bo tròn */

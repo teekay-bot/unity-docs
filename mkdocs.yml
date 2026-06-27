@@ -60,7 +60,9 @@ markdown_extensions:
 
 plugins:
   - search
-  - tags
+  - glightbox:
+      auto_caption: true
+      auto_themed: true
 
 extra_css:
   - stylesheets/extra.css

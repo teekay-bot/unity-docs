@@ -1,11 +1,3 @@
----
-tags:
-  - 2d
-  - 3d
-  - mobile
-  - pc
----
-
 # Quality Settings
 
 > **Target: Unity 6.3 LTS (6000.3)** · URP only. Default value trên trang này lấy từ template **Universal 3D** (`6000.3.10f1`). Field/menu path theo [Quality Settings — Unity 6.3 Manual](https://docs.unity3d.com/6000.3/Documentation/Manual/class-QualitySettings.html).
@@ -20,8 +12,8 @@ tags:
 
 **Menu path:** `Edit > Project Settings > Quality` — cách chắc chắn nhất. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field, và đặt level active cho từng platform.
 
-!!! note "📸 Screenshot sẽ chèn ở đây"
-    Ảnh cửa sổ `Project Settings > Quality` (thấy 2 level **Mobile/PC** + field **Render Pipeline**). *Chờ bạn chụp.*
+!!! note "📸 Screenshot — chờ lưu file"
+    Cửa sổ `Project Settings > Quality` (ví dụ project **2D**: 6 level Very Low→Ultra, Render Pipeline Asset `UniversalRP`). Để ý dòng *"A Scriptable Render Pipeline is in use, some settings will not be used and are hidden"* — đúng điểm URP ẩn nhiều field. **Lưu ảnh vào `docs/assets/screenshots/quality-window-2d.png`** rồi tôi chèn + bật zoom.
 
 !!! tip "Đổi nhanh Quality level trên toolbar (Unity 6.3)"
     Control này **ẩn mặc định** — bật qua tùy biến main toolbar:
@@ -99,8 +91,8 @@ Các field **còn thực sự tác dụng dưới URP**:
 | Anisotropic Textures | **Per Texture** (1) | **Forced On** (2) | |
 | Global Mipmap Limit | 0 (Full Res) | 0 (Full Res) | |
 | Mipmap Streaming | **Off** | **Off** | Budget 512 MB, 512 renderers/frame, max reduction 2, 1024 IO khi bật |
-| LOD Bias | **1** | **2** | PC giữ LOD cao xa hơn |
-| Maximum LOD Level | 0 | 0 | |
+| LOD Group Bias | **1** | **2** | PC giữ LOD cao xa hơn |
+| Maximum LOD Group Level | 0 | 0 | |
 | LOD Cross Fade | On (1) | On (1) | |
 | Particle Raycast Budget | 256 | 256 | |
 | Async Upload Time Slice / Buffer | 2 ms / 16 MB | 2 ms / 16 MB | Persistent Buffer: On |
