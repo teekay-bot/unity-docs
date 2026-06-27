@@ -4,13 +4,15 @@
 
 ## Mở ở đâu
 
-**Menu path:** `Edit > Project Settings > Quality`. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field của nó.
+**Menu path:** `Edit > Project Settings > Quality` — cách chắc chắn nhất. Cửa sổ liệt kê các quality level; chọn một level để xem/sửa field, và đặt level active cho từng platform.
 
-!!! info "Mới ở Unity 6.3 — đổi Quality level trên toolbar"
-    Unity 6.3 cho đổi nhanh Quality level **ngay trên main Editor toolbar** (thanh trên cùng của Editor), không cần mở Project Settings: bấm vào ô chọn Quality level trên toolbar → chọn level muốn dùng. Tham khảo [Toolbar reference](https://docs.unity3d.com/6000.3/Documentation/Manual/Toolbar-reference.html) · [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).
+!!! tip "Đổi nhanh Quality level trên toolbar (Unity 6.3)"
+    Control này **ẩn mặc định** — bật qua tùy biến main toolbar:
 
-!!! warning "Cần verify"
-    Vị trí chính xác của ô Quality trên toolbar 6.3 — xác nhận trực tiếp trong Editor (trang Toolbar reference tạm không truy cập được khi soạn).
+    1. Bấm **dấu ⋮ (3 chấm)** ở **góc phải trên main toolbar** (cạnh `Layout` / `?`).
+    2. Chọn **Editor Utility → Quality** (hoặc *Show All* để hiện hết).
+
+    Sau đó ô **Quality** xuất hiện trên main toolbar — bấm để đổi level, không cần mở Project Settings. (Main toolbar = hàng có nút Play/Pause; *không phải* menu bar File/Edit.) Nguồn: [What's New 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).
 
 ## Quality levels: template 2D vs 3D KHÁC nhau
 
