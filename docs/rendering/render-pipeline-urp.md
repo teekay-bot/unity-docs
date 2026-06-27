@@ -67,10 +67,18 @@ Các setting Universal Renderer khác: **Depth Priming Mode** (Disabled/Auto/For
     Dùng **Universal Renderer** với Rendering Path ở trên. Lighting/Shadows theo URP Asset.
 
 === "2D — 2D Renderer"
-    Project 2D dùng **2D Renderer** (Renderer2D Data) + hệ thống **2D Lights** riêng (không dùng rendering path 3D).
+    Template **Universal 2D** dùng **2D Renderer** (asset `Renderer2D`) + hệ thống **2D Lights** (không dùng rendering path 3D). Khác template 3D: 2D chỉ có **1 URP Asset** (`UniversalRP.asset`) dùng chung cho **6 quality level** (Very Low→Ultra). Verified từ `Assets/Settings/Renderer2D.asset`:
 
-    !!! warning "Cần verify"
-        Chi tiết setup & field của **2D Renderer** trong 6.3 chưa được verify ở trang này — đối chiếu [URP reference 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/urp/urp-reference-landing.html) trước khi viết hướng dẫn 2D cụ thể.
+    | Field | Default (template 2D) | Ý nghĩa |
+    |---|---|---|
+    | **Transparency Sort Mode** | Default | Cách sắp xếp vẽ sprite trong suốt |
+    | Transparency Sort Axis | (0, 1, 0) | Trục sort khi chọn Custom Axis |
+    | **Light Blend Styles** | Multiply · Additive · Multiply with Mask · Additive with Mask | 4 kiểu blend cho 2D Light |
+    | HDR Emulation Scale | 1 | Scale dải sáng giả lập HDR cho 2D |
+    | Max Light Render Texture Count | 16 | Giới hạn render texture cho 2D Light |
+    | Depth/Stencil Buffer | On | |
+
+    > Template 2D ship sẵn package 2D: 2D Animation, Aseprite, PSD Importer, SpriteShape, Tilemap (+Extras), Sprite, Tooling. Xem [Sprites & Atlases](../assets/sprites-atlases.md).
 
 ## Recommendation theo platform
 

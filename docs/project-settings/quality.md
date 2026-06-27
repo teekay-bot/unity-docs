@@ -9,16 +9,25 @@
 !!! info "Mới ở Unity 6.3"
     Đổi nhanh Quality level ngay trên **Editor toolbar**, không cần mở Project Settings. (Nguồn: [What's New in Unity 6.3](https://docs.unity3d.com/6000.3/Documentation/Manual/WhatsNewUnity63.html).)
 
-## 2 quality level mặc định: **Mobile** & **PC**
+## Quality levels: template 2D vs 3D KHÁC nhau
 
-Template **Universal 3D / Universal 2D** tạo sẵn đúng **2 quality level**, mỗi level trỏ tới một URP Asset riêng qua field **Render Pipeline**:
+Verified từ project thật — 2 template tạo **bộ quality level khác nhau**:
 
-| Quality level | Render Pipeline asset | Mặc định cho platform |
-|---|---|---|
-| **Mobile** (index 0) | `Mobile_RPAsset` | Android, iOS, WebGL… |
-| **PC** (index 1) | `PC_RPAsset` | Standalone (Win/Mac/Linux), consoles |
+=== "Universal 3D"
+    **2 level: `Mobile` và `PC`**, mỗi level trỏ một URP Asset riêng qua field **Render Pipeline**:
 
-> Verified: `m_PerPlatformDefaultQuality` (Android→Mobile, Standalone→PC). Mỗi level `excludedTargetPlatforms` loại nền không liên quan.
+    | Level | URP Asset | Default cho platform |
+    |---|---|---|
+    | **Mobile** (0) | `Mobile_RPAsset` | Android, iOS, WebGL… |
+    | **PC** (1) | `PC_RPAsset` | Standalone (Win/Mac/Linux), consoles |
+
+    > `m_PerPlatformDefaultQuality`: Android→Mobile, Standalone→PC. Mỗi level `excludedTargetPlatforms` loại nền không liên quan.
+
+=== "Universal 2D"
+    **6 level: `Very Low → Low → Medium → High → Very High → Ultra`** — tất cả trỏ **cùng một** URP Asset (`UniversalRP.asset`), không loại platform. Current mặc định: **Very Low**.
+
+!!! note "Bảng default bên dưới = template 3D"
+    Các bảng default ở dưới verify từ **template Universal 3D (Mobile/PC)**. Template **2D** dùng 6 level Very Low→Ultra chung 1 URP Asset — field cùng cấu trúc, tự chỉnh; nguyên tắc tối ưu PC vs Mobile vẫn áp dụng. Riêng 2D ít phụ thuộc shadow/cascade hơn (xem [2D Renderer](../rendering/render-pipeline-urp.md)).
 
 !!! note "URP điều khiển phần lớn rendering"
     Trong cửa sổ Quality, các field **Anti Aliasing (MSAA), Shadows, Soft Particles, Pixel Light Count** thực tế bị URP "vô hiệu" — cấu hình thật nằm trong **URP Asset** (xem bảng URP Asset bên dưới và [Render Pipeline (URP)](../rendering/render-pipeline-urp.md)). Đó là lý do `antiAliasing` = **0 (Disabled)** ở cả 2 level trong template.

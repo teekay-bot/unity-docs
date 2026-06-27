@@ -18,8 +18,8 @@
 
 ## 2. Render pipeline (URP 2D)
 
-- Template đã gán **URP Asset + 2D Renderer**. Kiểm tra `Edit > Project Settings > Graphics` đã trỏ URP Asset.
-- Chi tiết: [Render Pipeline (URP)](../rendering/render-pipeline-urp.md).
+- Template đã gán **1 URP Asset (`UniversalRP`) + `Renderer2D`** dùng chung cho **6 quality level** (Very Low→Ultra). Kiểm tra `Edit > Project Settings > Graphics` đã trỏ URP Asset.
+- 2D Renderer có **2D Lights** (4 blend style), Transparency Sort. Chi tiết: [Render Pipeline (URP)](../rendering/render-pipeline-urp.md).
 
 ## 3. Quality
 
@@ -33,7 +33,17 @@
 
 ## 5. Physics 2D
 
-- `Edit > Project Settings > Physics 2D`. Lưu ý Unity 6.3 có thay đổi về 2D physics — xem [Physics](../project-settings/physics.md).
+`Edit > Project Settings > Physics 2D`. Default verified từ template 2D (`6000.3.10f1`):
+
+| Field | Default | Ghi chú |
+|---|---|---|
+| Gravity | (0, **-9.81**) | |
+| Simulation Mode | **Fixed Update** | Chạy physics theo fixed timestep ([Time](../project-settings/time.md)) |
+| Reuse Collision Callbacks | **On** | Bật mặc định ở 6.3 — giảm GC từ collision callback |
+| Auto Sync Transforms | **Off** | Dùng `Physics2D.SyncTransforms()` khi cần (thay vì auto) |
+| Velocity / Position Iterations | 8 / 3 | |
+
+Chi tiết & Box2D: xem [Physics](../project-settings/physics.md).
 
 ## 6. Assets 2D
 
@@ -42,9 +52,10 @@
 
 ## 7. Scripting & version control
 
-- Input System (package) nếu cần input hiện đại.
+- **Input System** (`com.unity.inputsystem` 1.18.0) đã có sẵn trong template 2D.
+- 2D packages có sẵn: 2D Animation, Aseprite, PSD Importer, SpriteShape, Tilemap (+Extras), Sprite, Tooling.
 - Tạo `.gitignore` cho Unity (bỏ `Library/`, `Temp/`, `Build/`…).
-- Khai báo dependency vào [Packages & Assets](../packages/index.md).
+- Khai báo dependency thêm (vd UniTask) vào [Packages & Assets](../packages/index.md).
 
 ---
 
